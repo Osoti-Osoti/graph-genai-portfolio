@@ -100,8 +100,12 @@
     <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[92%] max-w-7xl z-50">
         <nav class="glass rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300" id="navbar">
             <div class="flex items-center space-x-3">
-                <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-teal via-brand-emerald to-brand-gold flex items-center justify-center text-slate-900 font-extrabold text-lg shadow-lg shadow-brand-teal/20">
-                    RO
+                <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-teal via-brand-emerald to-brand-gold p-0.5 flex items-center justify-center text-slate-900 font-extrabold text-lg shadow-lg shadow-brand-teal/20">
+                    <img src="https://raw.githubusercontent.com/Osoti-Osoti/graph-genai-portfolio/main/Osoti.jpg" 
+                         onerror="this.style.display='none'; document.getElementById('navInitials').classList.remove('hidden');" 
+                         alt="Robert Osoti" 
+                         class="w-full h-full object-cover rounded-[10px]">
+                    <span id="navInitials" class="hidden text-slate-900 font-extrabold text-sm">RO</span>
                 </div>
                 <div>
                     <span class="text-white font-bold tracking-tight block">Robert Osoti</span>
@@ -144,6 +148,25 @@
 
     <!-- HERO SECTION -->
     <section id="hero" class="relative pt-36 pb-20 md:pt-48 md:pb-32 px-4 max-w-7xl mx-auto flex flex-col items-center justify-center text-center">
+        
+        <!-- Beautiful Circular Avatar -->
+        <div class="relative w-32 h-32 md:w-36 md:h-36 mx-auto mb-6 rounded-full p-1 bg-gradient-to-tr from-brand-teal via-brand-emerald to-brand-gold shadow-2xl shadow-brand-teal/20 hover:scale-105 transition-all duration-300 group cursor-pointer">
+            <div class="w-full h-full rounded-full overflow-hidden bg-brand-dark flex items-center justify-center border border-white/10 relative">
+                <img src="https://raw.githubusercontent.com/Osoti-Osoti/graph-genai-portfolio/main/Osoti.jpg" 
+                     onerror="this.onerror=null; this.src='https://github.com/Osoti-Osoti/graph-genai-portfolio/blob/main/Osoti.jpg?raw=true';" 
+                     alt="Robert Osoti" 
+                     class="w-full h-full object-cover rounded-full transition duration-300 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-2">
+                    <span class="text-[9px] font-mono tracking-wider text-white uppercase bg-black/50 px-2 py-0.5 rounded-full">MERL Lead</span>
+                </div>
+            </div>
+            <!-- Interactive status pulse badge -->
+            <span class="absolute bottom-2 right-2 flex h-4 w-4">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-emerald opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-4 w-4 bg-brand-emerald border-2 border-[#080C18]"></span>
+            </span>
+        </div>
+
         <!-- Floating badge -->
         <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-brand-teal/10 to-brand-emerald/10 border border-brand-teal/30 px-4 py-1.5 rounded-full mb-6 animate-pulse">
             <span class="h-2 w-2 rounded-full bg-brand-emerald"></span>
