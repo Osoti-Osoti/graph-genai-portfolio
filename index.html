@@ -68,6 +68,7 @@
             background: linear-gradient(to bottom right, rgba(72,202,228,0.4), rgba(6,214,160,0.1), rgba(255,209,102,0.4));
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
+            -webkit-mask-composite: exclude;
             mask-composite: exclude;
             pointer-events: none;
         }
@@ -482,7 +483,7 @@
                     </div>
                     <h3 class="text-lg font-bold text-white mb-2">AI-Automated Data Analysis</h3>
                     <p class="text-sm text-slate-400 line-clamp-3">
-                        Utilized Julius, ChatGPT Code Interpreter, and Windsurf to ingest massive health datasets, perform prompt-driven regressions, output visualizations, and build dynamic automated dashboards.
+                        Analyzed Gapminder health data parameters using AI tools to uncover regional indicators. Ran quick regressions, designed interactive visual assets, and deployed an automated analysis dashboard.
                     </p>
                 </div>
                 <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
@@ -706,7 +707,7 @@
                         <h4 class="font-extrabold text-white text-md">Simulation & Agent Loop</h4>
                         <p class="text-xs text-slate-400 mt-2">Connecting disease modeling inputs to live synthesis reports with high-fidelity outputs.</p>
                         <div class="mt-4 text-[10px] font-mono text-brand-emerald bg-brand-emerald/10 px-3 py-1 rounded-full">
-                            Active Integration Phase
+                            <div class="text-slate-900 font-extrabold">Active Integration Phase</div>
                         </div>
                     </div>
                 </div>
@@ -863,13 +864,13 @@
                     </div>
                 </div>
 
-                <div class="p-4 bg-brand-teal/5 rounded-2xl border border-brand-teal/10 flex items-start space-x-3">
+                <div id="modalLinkContainer" class="p-4 bg-brand-teal/5 rounded-2xl border border-brand-teal/10 flex items-start space-x-3">
                     <div class="p-2 bg-brand-teal/10 text-brand-teal rounded-lg mt-0.5">
                         <i class="fa-solid fa-link"></i>
                     </div>
                     <div>
-                        <h5 class="text-xs font-bold text-white">Live Submission Link Placeholder</h5>
-                        <p class="text-xs text-slate-400 mt-1">
+                        <h5 class="text-xs font-bold text-white">Artifact Access Node</h5>
+                        <p id="modalLinkText" class="text-xs text-slate-400 mt-1">
                             A live demonstration link or GitHub repository showcasing this exact deliverable will be connected here as the cohort progresses.
                         </p>
                     </div>
@@ -914,7 +915,8 @@
                 deliverables: "Design a personal research web template, format markdown scientific papers, and map high-end slide presentations using markdown-compatible assistants.",
                 tools: "ChatGPT Canvas, Replit, Marp",
                 status: "Completed & Evaluated",
-                statusClass: "text-brand-emerald"
+                statusClass: "text-brand-emerald",
+                link: null
             },
             2: {
                 week: "Week 02",
@@ -924,12 +926,13 @@
                     "Ingesting health datasets into Julius AI for automated predictive pipelines",
                     "Performing file transformations and batch manipulations dynamically",
                     "Building custom dashboard trackers using automated components in TheBricks",
-                    "Executing spreadsheet automations for recursive epidemiological analytics"
+                    "Executing spreadsheet automations for recursive indicators and regressions"
                 ],
-                deliverables: "Ingested multi-county health datasets to run automated data checks, produced cross-tabulations on malaria/HIV indices, and built an automated analytical dashboard.",
+                deliverables: "Ingested multi-county and Gapminder indicator data structures to evaluate global development trajectories, outputted robust public health metrics models, and generated localized visualizations.",
                 tools: "Julius, Code Interpreter, Windsurf, TheBricks",
                 status: "Completed & Evaluated",
-                statusClass: "text-brand-emerald"
+                statusClass: "text-brand-emerald",
+                link: "./week2.html"
             },
             3: {
                 week: "Week 03",
@@ -943,7 +946,8 @@
                 deliverables: "Extracted parameters from scientific abstracts regarding nutritional supplements (SQ-LNS / MMS) and mapped research topics using semantic text groupings.",
                 tools: "Elicit, LiteRev, ChatGPT Canvas",
                 status: "Completed & Evaluated",
-                statusClass: "text-brand-emerald"
+                statusClass: "text-brand-emerald",
+                link: null
             },
             4: {
                 week: "Week 04",
@@ -957,7 +961,8 @@
                 deliverables: "Engineered a custom assistant GPT trained specifically to guide clinical staff on WHO staffing benchmarks and event-based public health metrics.",
                 tools: "Botpress, ChatGPT builder, Custom RAG Nodes",
                 status: "Completed & Evaluated",
-                statusClass: "text-brand-emerald"
+                statusClass: "text-brand-emerald",
+                link: null
             },
             5: {
                 week: "Week 05",
@@ -971,7 +976,8 @@
                 deliverables: "Developing an autonomous web monitoring routine that scrapes epidemiological alerts and formats weekly email briefs for medical directors.",
                 tools: "Make, Browser Agents, Custom APIs",
                 status: "In Progress / Active Development",
-                statusClass: "text-brand-gold"
+                statusClass: "text-brand-gold",
+                link: null
             },
             6: {
                 week: "Week 06",
@@ -985,7 +991,8 @@
                 deliverables: "Structuring high-fidelity visual diagrams illustrating Balanced Energy Protein causal pathways and producing brief video abstracts explaining epidemiological findings.",
                 tools: "Video AI Generators, Midjourney, Marp Slides",
                 status: "Scheduled / Upcoming",
-                statusClass: "text-slate-400"
+                statusClass: "text-slate-400",
+                link: null
             },
             7: {
                 week: "Weeks 07-8",
@@ -999,7 +1006,8 @@
                 deliverables: "Assembling an end-to-end AI workflow that handles multi-source clinical inputs, extracts variables via structured LLM templates, and generates localized public health summaries.",
                 tools: "Integrative AI Agents, Python pipelines",
                 status: "Scheduled / Upcoming",
-                statusClass: "text-slate-400"
+                statusClass: "text-slate-400",
+                link: null
             }
         };
 
@@ -1026,6 +1034,14 @@
                 li.innerText = topic;
                 topicsList.appendChild(li);
             });
+
+            // Context Link Configuration
+            const linkTextNode = document.getElementById('modalLinkText');
+            if (data.link) {
+                linkTextNode.innerHTML = `<a href="${data.link}" target="_blank" class="inline-flex items-center text-brand-teal hover:text-brand-gold underline font-semibold transition mt-1">Review "Automated Data Analysis" Live Artifact <i class="fa-solid fa-square-arrow-up-right ml-1.5 text-xs"></i></a>`;
+            } else {
+                linkTextNode.innerText = "A live demonstration link or GitHub repository showcasing this exact deliverable will be connected here as the cohort progresses.";
+            }
 
             // Show Modal with Animation
             const modal = document.getElementById('detailsModal');
@@ -1128,7 +1144,6 @@
             });
 
             if (filled) {
-                // In a production setup, this will route cleanly to your secure gateway or serverless webhook
                 showToast("Your message was encrypted & transmitted successfully!", "success");
                 event.target.reset();
             } else {
