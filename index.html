@@ -410,4 +410,206 @@
                 <h2 class="text-3xl md:text-5xl font-extrabold text-white">Course Artifacts & Deliverables</h2>
                 <p class="text-slate-400 max-w-2xl">
                     Detailed trackers for all my weekly course submissions. Use the filters below to explore tasks covering LLM design, automated pipelines, custom RAG architecture, and literature mapping.
-                </p
+                </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2" id="filterContainer">
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition bg-gradient-to-r from-brand-teal to-brand-emerald text-slate-900 shadow-md" data-category="all">All Modules</button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition bg-white/5 hover:bg-white/10 text-slate-300" data-category="code">Web & Data</button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition bg-white/5 hover:bg-white/10 text-slate-300" data-category="text">Research & Literature</button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition bg-white/5 hover:bg-white/10 text-slate-300" data-category="automation">Custom Bots & Flows</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
+            
+            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="code">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 01</span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-brand-emerald" title="Completed"></span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Websites, Documents & Presentations</h3>
+                    <p class="text-sm text-slate-400 line-clamp-3">
+                        Explored Large Language Model inner workings, trained weights, and provider structures. Generated complex HTML layouts, customized Markdown logs, and designed scientific presentations.
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-slate-400">Tools: ChatGPT Canvas, Replit</span>
+                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(1)">
+                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="code">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 02</span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-brand-emerald" title="Completed"></span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">AI-Automated Data Analysis</h3>
+                    <p class="text-sm text-slate-400 line-clamp-3">
+                        Analyzed Gapminder health data parameters using AI tools to uncover regional indicators. Ran quick regressions, designed interactive visual assets, and deployed an automated analysis dashboard.
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-slate-400">Tools: Julius, TheBricks</span>
+                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(2)">
+                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="text code">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 03</span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-brand-emerald" title="Completed"></span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">GenAI for Research & Text Analysis</h3>
+                    <p class="text-sm text-slate-400 line-clamp-3">
+                        Created semantic mapping structures and classification layers. Formulated automated review pipelines using LiteRev and Elicit for massive health and infectious disease text collections.
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-slate-400">Tools: Elicit, LiteRev, Sheets LLM</span>
+                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(3)">
+                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="automation">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 04</span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-brand-emerald" title="Completed"></span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Custom GPTs & Research Chatbots</h3>
+                    <p class="text-sm text-slate-400 line-clamp-3">
+                        Assembled context window limits and RAG nodes. Integrated customized knowledge base architectures containing research guidelines and CDC surveillance frameworks into Botpress workflow channels.
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-slate-400">Tools: Botpress, Custom GPTs</span>
+                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(4)">
+                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="automation">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 05</span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-brand-gold" title="In Progress"></span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">AI Agents & Task Automation</h3>
+                    <p class="text-sm text-slate-400 line-clamp-3">
+                        Formulating autonomous web browser control agents and complex email logic flows. Setting up automated monitoring triggers for public health journals to automate alert streams.
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-slate-400">Tools: Browser Agents, Make</span>
+                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(5)">
+                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="text">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 06</span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-slate-600" title="Coming Soon"></span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">GenAI for Comm & Outreach</h3>
+                    <p class="text-sm text-slate-400 line-clamp-3">
+                        Planning prompt strategies for scientific data visualization, video abstracts, and dynamic layman research summaries designed to share public health insights across digital channels with zero friction.
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-slate-400">Tools: Video Gen, Midjourney</span>
+                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(6)">
+                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="code text automation">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEKS 7-8</span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-slate-600" title="Coming Soon"></span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Capstone Project & Showcase</h3>
+                    <p class="text-sm text-slate-400 line-clamp-3">
+                        Collaborating on a final AI-driven solution representing responsible AI practices. Merging microsimulation model parameter checks with automated data extraction pipelines.
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-slate-400">Tools: Full Stack AI Integration</span>
+                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(7)">
+                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="credentials" class="py-20 bg-[#0B132B]/60 border-y border-white/5 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <div class="lg:col-span-4 space-y-4 lg:sticky lg:top-32">
+                    <div class="inline-flex items-center space-x-2">
+                        <span class="h-1 w-8 bg-brand-teal rounded-full"></span>
+                        <span class="text-xs font-mono tracking-widest text-brand-teal uppercase font-semibold">CAREER STACK & INTEL</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white">Experience & Educational Pedigree</h2>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        A synthesized history of over a decade driving scientific monitoring architectures, epidemic surveillance systems, and public health metrics analysis globally.
+                    </p>
+                    <div class="pt-4">
+                        <a href="#contact" class="inline-flex items-center text-sm font-bold text-brand-emerald hover:text-brand-gold transition">
+                            Request my complete scientific CV <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-8 space-y-8">
+                    
+                    <div class="relative pl-8 border-l-2 border-slate-800 space-y-2">
+                        <div class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-brand-teal border-4 border-[#080C18]"></div>
+                        <span class="text-xs font-mono text-brand-teal uppercase tracking-wider block font-semibold">2024 — 2028 (Candidate)</span>
+                        <h3 class="text-xl font-bold text-white">PhD in Global Health</h3>
+                        <p class="text-sm font-semibold text-slate-300">Jomo Kenyatta University of Agriculture and Technology</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mt-1">
+                            Focusing research strategies around epidemiological forecasting, sub-national healthcare constraints, and interactive digital intelligence systems.
+                        </p>
+                    </div>
+
+                    <div class="relative pl-8 border-l-2 border-slate-800 space-y-2">
+                        <div class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-brand-emerald border-4 border-[#080C18]"></div>
+                        <span class="text-xs font-mono text-brand-emerald uppercase tracking-wider block font-semibold">July 2025 — Feb 2026</span>
+                        <h3 class="text-xl font-bold text-white">Consultant - MERL Expert</h3>
+                        <p class="text-sm font-semibold text-slate-300">Washington State University</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mt-1">
+                            Designed integrated monitoring systems for PBIDS 2.0 in close alignment with the CDC, Ministry of Health, and KEMRI priorities, ensuring robust event-based surveillance tracking.
+                        </p>
+                    </div>
+
+                    <div class="relative pl-8 border-l-2 border-slate-800 space-y-2">
+                        <div class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-brand-gold border-4 border-[#080C18]"></div>
+                        <span class="text-xs font-mono text-brand-gold uppercase tracking-wider block font-semibold">2019 — 2025</span>
+                        <h3 class="text-xl font-bold text-white">MERL Lead</h3>
+                        <p class="text-sm font-semibold text-slate-300">Gold Star Kenya</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mt-1">
+                            Built interactive data dashboards using Power BI and electronic records systems. Oversaw compliance tracking, managed USAID & Global Fund grants, and facilitated collaborative learning loops.
+                        </p>
+                    </div>
+
+                    <div class
