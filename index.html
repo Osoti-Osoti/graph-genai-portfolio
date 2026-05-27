@@ -1,1217 +1,1154 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osoti Osoti | Generative AI for Work & Research Portfolio</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            dark: '#0B132B',
-                            cardDark: '#1C2541',
-                            teal: '#48CAE4',
-                            emerald: '#06D6A0',
-                            gold: '#FFD166',
-                            coral: '#EF476F',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #080C18;
-            color: #F3F4F6;
-        }
-        .glass {
-            background: rgba(28, 37, 65, 0.4);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .glass-light {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(0, 0, 0, 0.06);
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #48CAE4 0%, #06D6A0 50%, #FFD166 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .glow-effect {
-            position: relative;
-        }
-        .glow-effect::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(to bottom right, rgba(72,202,228,0.4), rgba(6,214,160,0.1), rgba(255,209,102,0.4));
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            -webkit-mask-composite: exclude;
-            mask-composite: exclude;
-            pointer-events: none;
-        }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #080C18;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1C2541;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #48CAE4;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osoti Osoti | Generative AI for Work & Research Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0B132B',
+                            cardDark: '#1C2541',
+                            teal: '#48CAE4',
+                            emerald: '#06D6A0',
+                            gold: '#FFD166',
+                            coral: '#EF476F',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #080C18;
+            color: #F3F4F6;
+        }
+        .glass {
+            background: rgba(28, 37, 65, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-light {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #48CAE4 0%, #06D6A0 50%, #FFD166 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-effect {
+            position: relative;
+        }
+        .glow-effect::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(to bottom right, rgba(72,202,228,0.4), rgba(6,214,160,0.1), rgba(255,209,102,0.4));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            -webkit-mask-composite: exclude;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080C18;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1C2541;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #48CAE4;
+        }
+    </style>
 </head>
 <body class="transition-colors duration-300">
 
-    <!-- Glowing Background blobs -->
-    <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1] overflow-hidden">
-        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-brand-teal/10 blur-[120px]"></div>
-        <div class="absolute bottom-[10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-brand-emerald/5 blur-[150px]"></div>
-        <div class="absolute top-[40%] left-[30%] w-[40%] h-[40%] rounded-full bg-brand-gold/5 blur-[130px]"></div>
-    </div>
-
-    <!-- HEADER / NAVIGATION -->
-    <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[92%] max-w-7xl z-50">
-        <nav class="glass rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300" id="navbar">
-            <div class="flex items-center space-x-3">
-                <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-teal via-brand-emerald to-brand-gold p-0.5 flex items-center justify-center text-slate-900 font-extrabold text-lg shadow-lg shadow-brand-teal/20">
-                    <img src="https://raw.githubusercontent.com/Osoti-Osoti/graph-genai-portfolio/main/Osoti.jpg" 
-                         onerror="this.style.display='none'; document.getElementById('navInitials').classList.remove('hidden');" 
-                         alt="Osoti Osoti" 
-                         class="w-full h-full object-cover rounded-[10px]">
-                    <span id="navInitials" class="hidden text-slate-900 font-extrabold text-sm">OO</span>
-                </div>
-                <div>
-                    <span class="text-white font-bold tracking-tight block">Osoti Osoti</span>
-                    <span class="text-[10px] text-brand-teal font-mono uppercase tracking-widest block">AI for Research & MERL</span>
-                </div>
-            </div>
-
-            <!-- Nav Links (Desktop) -->
-            <div class="hidden md:flex items-center space-x-1 font-medium text-sm">
-                <a href="#hero" class="px-4 py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">Home</a>
-                <a href="#about" class="px-4 py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">About</a>
-                <a href="#course" class="px-4 py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">The Course</a>
-                <a href="#submissions" class="px-4 py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">AI Submissions</a>
-                <a href="#credentials" class="px-4 py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">Profile</a>
-            </div>
-
-            <div class="flex items-center space-x-3">
-                <button id="themeToggle" class="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition duration-200" title="Toggle Theme">
-                    <i class="fa-solid fa-moon text-md"></i>
-                </button>
-                <a href="#contact" class="hidden sm:inline-flex items-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-slate-900 bg-gradient-to-r from-brand-teal to-brand-emerald hover:from-brand-teal hover:to-brand-gold rounded-xl transition-all duration-300 shadow-md hover:shadow-brand-teal/20">
-                    Work With Me <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
-                </a>
-                <button class="md:hidden p-2 text-slate-300 hover:text-white" id="mobileMenuBtn">
-                    <i class="fa-solid fa-bars text-xl"></i>
-                </button>
-            </div>
-        </nav>
-
-        <!-- Mobile Menu (hidden by default) -->
-        <div class="hidden mt-2 w-full glass rounded-2xl p-4 flex-col space-y-2 text-center md:hidden" id="mobileMenu">
-            <a href="#hero" class="block py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">Home</a>
-            <a href="#about" class="block py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">About Me</a>
-            <a href="#course" class="block py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">The Course</a>
-            <a href="#submissions" class="block py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">Submissions</a>
-            <a href="#credentials" class="block py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">Experience</a>
-            <a href="#contact" class="block py-2 text-brand-teal font-semibold transition rounded-lg hover:bg-white/5">Contact</a>
-        </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section id="hero" class="relative pt-36 pb-20 md:pt-48 md:pb-32 px-4 max-w-7xl mx-auto flex flex-col items-center justify-center text-center">
-        
-        <!-- Beautiful Circular Avatar -->
-        <div class="relative w-32 h-32 md:w-36 md:h-36 mx-auto mb-6 rounded-full p-1 bg-gradient-to-tr from-brand-teal via-brand-emerald to-brand-gold shadow-2xl shadow-brand-teal/20 hover:scale-105 transition-all duration-300 group cursor-pointer">
-            <div class="w-full h-full rounded-full overflow-hidden bg-brand-dark flex items-center justify-center border border-white/10 relative">
-                <img src="https://raw.githubusercontent.com/Osoti-Osoti/graph-genai-portfolio/main/Osoti.jpg" 
-                     onerror="this.onerror=null; this.src='https://github.com/Osoti-Osoti/graph-genai-portfolio/blob/main/Osoti.jpg?raw=true';" 
-                     alt="Osoti Osoti" 
-                     class="w-full h-full object-cover rounded-full transition duration-300 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-2">
-                    <span class="text-[9px] font-mono tracking-wider text-white uppercase bg-black/50 px-2 py-0.5 rounded-full">MERL Lead</span>
-                </div>
-            </div>
-            <!-- Interactive status pulse badge -->
-            <span class="absolute bottom-2 right-2 flex h-4 w-4">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-emerald opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-4 w-4 bg-brand-emerald border-2 border-[#080C18]"></span>
-            </span>
-        </div>
-
-        <!-- Floating badge -->
-        <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-brand-teal/10 to-brand-emerald/10 border border-brand-teal/30 px-4 py-1.5 rounded-full mb-6 animate-pulse">
-            <span class="h-2 w-2 rounded-full bg-brand-emerald"></span>
-            <span class="text-xs font-mono tracking-wide text-brand-teal uppercase">The GRAPH Courses Cohort — University of Geneva</span>
-        </div>
-
-        <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight max-w-5xl leading-tight">
-            Bridging Global Health <span class="gradient-text">MERL</span> with <br class="hidden md:inline">
-            <span class="relative">
-                Generative AI Systems
-                <span class="absolute bottom-1 left-0 w-full h-1.5 bg-gradient-to-r from-brand-teal via-brand-emerald to-brand-gold rounded-full opacity-60"></span>
-            </span>
-        </h1>
-
-        <p class="mt-8 text-base sm:text-lg md:text-xl text-slate-400 max-w-3xl leading-relaxed">
-            I am <strong class="text-white">Osoti Osoti</strong>, a veteran Public Health, MERL Lead, and PhD Candidate. 
-            This portfolio showcases my professional mastery of no-code AI tools, prompt engineering, text analysis pipelines, 
-            and interactive agent automations.
-        </p>
-
-        <!-- CTA Action Buttons -->
-        <div class="mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center z-10">
-            <a href="#submissions" class="px-8 py-4 w-full sm:w-auto font-semibold rounded-2xl bg-gradient-to-r from-brand-teal via-brand-emerald to-brand-gold text-slate-900 transition-all duration-300 hover:scale-[1.03] shadow-lg shadow-brand-teal/15 text-center flex items-center justify-center">
-                <i class="fa-solid fa-bolt mr-2 text-sm"></i> View Course Submissions
-            </a>
-            <a href="#about" class="px-8 py-4 w-full sm:w-auto font-semibold rounded-2xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-white/20 transition-all duration-300 text-center flex items-center justify-center">
-                Explore My MERL Profile
-            </a>
-        </div>
-
-        <!-- Metric Cards -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 w-full max-w-5xl">
-            <div class="glass p-5 rounded-2xl glow-effect text-center">
-                <div class="text-3xl md:text-4xl font-extrabold text-brand-teal">10+</div>
-                <div class="text-xs text-slate-400 uppercase tracking-widest font-mono mt-1">Years M&E Experience</div>
-            </div>
-            <div class="glass p-5 rounded-2xl glow-effect text-center">
-                <div class="text-3xl md:text-4xl font-extrabold text-brand-emerald">PhD (c)</div>
-                <div class="text-xs text-slate-400 uppercase tracking-widest font-mono mt-1">Global Health Research</div>
-            </div>
-            <div class="glass p-5 rounded-2xl glow-effect text-center">
-                <div class="text-3xl md:text-4xl font-extrabold text-brand-gold">$40M+</div>
-                <div class="text-xs text-slate-400 uppercase tracking-widest font-mono mt-1">Grant Funds Managed</div>
-            </div>
-            <div class="glass p-5 rounded-2xl glow-effect text-center">
-                <div class="text-3xl md:text-4xl font-extrabold text-brand-coral">8 Weeks</div>
-                <div class="text-xs text-slate-400 uppercase tracking-widest font-mono mt-1">Intensive GenAI Mastery</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT ME SECTION -->
-    <section id="about" class="py-20 px-4 max-w-7xl mx-auto scroll-mt-24">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
-            <!-- Left Bio/Intro Column -->
-            <div class="lg:col-span-7 space-y-6">
-                <div class="inline-flex items-center space-x-2">
-                    <span class="h-1 w-8 bg-brand-teal rounded-full"></span>
-                    <span class="text-xs font-mono tracking-widest text-brand-teal uppercase font-semibold">ABOUT ME</span>
-                </div>
-                
-                <h2 class="text-3xl md:text-4xl font-extrabold text-white">
-                    Pioneering Adaptive AI in Global Health Monitoring, Evaluation & Research
-                </h2>
-                
-                <p class="text-slate-300 leading-relaxed text-lg">
-                    As a results-oriented PhD candidate and lead MERL professional, I specialize in translating complex health and socio-economic data into highly actionable policy briefs and decision dashboards. 
-                </p>
-                <p class="text-slate-400 leading-relaxed">
-                    Over the past decade, I have directed large-scale systems across East Africa in collaboration with major partners including 
-                    <strong class="text-brand-teal">USAID, CDC, the Safaricom Foundation, KEMRI,</strong> and the <strong class="text-brand-teal">Global Fund/MoH</strong>. 
-                    I enrolled in <em>Generative AI for Work & Research</em> to master safe, transparent automation mechanisms—applying LLMs, agent workflows, and semantic search algorithms directly to epidemiological monitoring and data intelligence.
-                </p>
-
-                <!-- Core Pillars -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                    <div class="flex items-start space-x-3">
-                        <div class="p-2.5 rounded-lg bg-brand-teal/10 text-brand-teal mt-0.5">
-                            <i class="fa-solid fa-chart-line"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Adaptive CLA Frameworks</h4>
-                            <p class="text-xs text-slate-400 mt-1">Facilitating deep collaborative learning & action loops across counties.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-3">
-                        <div class="p-2.5 rounded-lg bg-brand-emerald/10 text-brand-emerald mt-0.5">
-                            <i class="fa-solid fa-robot"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Responsible Automation</h4>
-                            <p class="text-xs text-slate-400 mt-1">Leveraging secure custom GPTs, RAG nodes, and agent orchestration.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-3">
-                        <div class="p-2.5 rounded-lg bg-brand-gold/10 text-brand-gold mt-0.5">
-                            <i class="fa-solid fa-laptop-code"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Advanced Tech Stack</h4>
-                            <p class="text-xs text-slate-400 mt-1">Python, Power BI, STATA, QGIS, and custom LLM micro-services.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start space-x-3">
-                        <div class="p-2.5 rounded-lg bg-brand-coral/10 text-brand-coral mt-0.5">
-                            <i class="fa-solid fa-book-open"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-white text-sm">Published Researcher</h4>
-                            <p class="text-xs text-slate-400 mt-1">Experienced peer-mentor and international conference speaker.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Interventions & Skills Radar Column -->
-            <div class="lg:col-span-5 space-y-6">
-                <div class="glass p-6 rounded-3xl glow-effect space-y-6">
-                    <h3 class="text-xl font-bold text-white flex items-center">
-                        <i class="fa-solid fa-wand-magic-sparkles mr-2.5 text-brand-teal"></i> AI & MERL Skill Integration
-                    </h3>
-                    
-                    <div class="space-y-4">
-                        <!-- Skill 1 -->
-                        <div>
-                            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1.5">
-                                <span>LLMs & PROMPT ENGINEERING</span>
-                                <span class="text-brand-teal">95%</span>
-                            </div>
-                            <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
-                                <div class="h-full bg-gradient-to-r from-brand-teal to-brand-emerald rounded-full" style="width: 95%"></div>
-                            </div>
-                        </div>
-
-                        <!-- Skill 2 -->
-                        <div>
-                            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1.5">
-                                <span>AI-AUTOMATED DATA ANALYSIS (Julius, Code Int.)</span>
-                                <span class="text-brand-emerald">90%</span>
-                            </div>
-                            <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
-                                <div class="h-full bg-gradient-to-r from-brand-emerald to-brand-gold rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-
-                        <!-- Skill 3 -->
-                        <div>
-                            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1.5">
-                                <span>CUSTOM GPTS & RAG WORKFLOWS</span>
-                                <span class="text-brand-gold">85%</span>
-                            </div>
-                            <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
-                                <div class="h-full bg-gradient-to-r from-brand-gold to-brand-coral rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-
-                        <!-- Skill 4 -->
-                        <div>
-                            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1.5">
-                                <span>LITERATURE SYNTHESIS (Elicit / LiteRev)</span>
-                                <span class="text-brand-coral">90%</span>
-                            </div>
-                            <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
-                                <div class="h-full bg-gradient-to-r from-brand-coral to-brand-teal rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-
-                        <!-- Skill 5 -->
-                        <div>
-                            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1.5">
-                                <span>PYTHON FOR DATA SCIENCE</span>
-                                <span class="text-brand-teal">80%</span>
-                            </div>
-                            <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
-                                <div class="h-full bg-gradient-to-r from-brand-teal to-brand-emerald rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
-                        <span class="text-xs font-mono uppercase text-brand-gold block font-semibold mb-1">Current Research Focus</span>
-                        <p class="text-xs text-slate-400 leading-relaxed">
-                            Simulating sub-national health and economic burdens (DALYs averted) and integrating effect modifiers in maternal & neonatal health microsimulation engines.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- THE COURSE SECTION -->
-    <section id="course" class="py-20 bg-[#0B132B]/60 border-y border-white/5 scroll-mt-24">
-        <div class="max-w-7xl mx-auto px-4">
-            
-            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <div class="inline-flex items-center space-x-2">
-                    <span class="h-1 w-8 bg-brand-emerald rounded-full"></span>
-                    <span class="text-xs font-mono tracking-widest text-brand-emerald uppercase font-semibold">THE ACADEMIC PROGRAM</span>
-                </div>
-                <h2 class="text-3xl md:text-5xl font-extrabold text-white">Generative AI for Work & Research</h2>
-                <p class="text-slate-400">
-                    A rigorous 8-week bootcamp program hosted by <strong class="text-white">The GRAPH Courses</strong> (based at the University of Geneva, Switzerland) combining technical rigor with practical, clinical & scientific task automation.
-                </p>
-            </div>
-
-            <!-- Program Features Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                
-                <!-- Card 1 -->
-                <div class="glass p-8 rounded-2xl glow-effect space-y-4">
-                    <div class="h-12 w-12 rounded-xl bg-brand-teal/10 text-brand-teal flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">Academic Rigor</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Backed by academic institutions and international health leaders (Geneva Digital Health Hub, World Health Organization partners). Focused on transparency, ethics, and reproducible prompts.
-                    </p>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="glass p-8 rounded-2xl glow-effect space-y-4">
-                    <div class="h-12 w-12 rounded-xl bg-brand-emerald/10 text-brand-emerald flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-sliders"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">Practical No-Code Systems</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Focused on building automated dashboards, customized chatbot helpers, agent workflow loops, and literature-mapping pipelines without writing complex boilerplate code.
-                    </p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="glass p-8 rounded-2xl glow-effect space-y-4">
-                    <div class="h-12 w-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-certificate"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white">Global Cohort Network</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        Weekly live workshops, collaborative project peer reviews, and direct scientific evaluation based on a rigorous grading rubric (passing score of 80% to earn the certification).
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- Partner logos scroller placeholder -->
-            <div class="mt-16 text-center space-y-4">
-                <span class="text-xs uppercase font-mono tracking-widest text-slate-500 block">Affiliated Networks & Partner Systems</span>
-                <div class="flex flex-wrap items-center justify-center gap-6 md:gap-12 opacity-50 grayscale hover:grayscale-0 transition duration-300">
-                    <span class="text-sm font-bold text-white tracking-widest">UNIVERSITÉ DE GENÈVE</span>
-                    <span class="text-sm font-bold text-white tracking-widest">WORLD HEALTH ORGANIZATION</span>
-                    <span class="text-sm font-bold text-white tracking-widest">EPILIMINOLOGY NETWORK</span>
-                    <span class="text-sm font-bold text-white tracking-widest">SWISS SCHOOL OF PUBLIC HEALTH</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- WEEKLY SUBMISSIONS / PORTFOLIO SECTION -->
-    <section id="submissions" class="py-20 px-4 max-w-7xl mx-auto scroll-mt-24">
-        
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div class="space-y-4">
-                <div class="inline-flex items-center space-x-2">
-                    <span class="h-1 w-8 bg-brand-gold rounded-full"></span>
-                    <span class="text-xs font-mono tracking-widest text-brand-gold uppercase font-semibold">WEEKLY MODULE PORTFOLIO</span>
-                </div>
-                <h2 class="text-3xl md:text-5xl font-extrabold text-white">Course Artifacts & Deliverables</h2>
-                <p class="text-slate-400 max-w-2xl">
-                    Detailed trackers for all my weekly course submissions. Use the filters below to explore tasks covering LLM design, automated pipelines, custom RAG architecture, and literature mapping.
-                </p>
-            </div>
-
-            <!-- Categories / Filter -->
-            <div class="flex flex-wrap gap-2" id="filterContainer">
-                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition bg-gradient-to-r from-brand-teal to-brand-emerald text-slate-900 shadow-md" data-category="all">All Modules</button>
-                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition bg-white/5 hover:bg-white/10 text-slate-300" data-category="code">Web & Data</button>
-                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition bg-white/5 hover:bg-white/10 text-slate-300" data-category="text">Research & Literature</button>
-                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition bg-white/5 hover:bg-white/10 text-slate-300" data-category="automation">Custom Bots & Flows</button>
-            </div>
-        </div>
-
-        <!-- Submission Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
-            
-            <!-- Week 1 Card -->
-            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="code">
-                <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 01</span>
-                        <span class="h-2.5 w-2.5 rounded-full bg-brand-emerald" title="Completed"></span>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Websites, Documents & Presentations</h3>
-                    <p class="text-sm text-slate-400 line-clamp-3">
-                        Explored Large Language Model inner workings, trained weights, and provider structures. Generated complex HTML layouts, customized Markdown logs, and designed scientific presentations.
-                    </p>
-                </div>
-                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] font-mono text-slate-400">Tools: ChatGPT Canvas, Replit</span>
-                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(1)">
-                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Week 2 Card -->
-            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="code">
-                <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 02</span>
-                        <span class="h-2.5 w-2.5 rounded-full bg-brand-emerald" title="Completed"></span>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">AI-Automated Data Analysis</h3>
-                    <p class="text-sm text-slate-400 line-clamp-3">
-                        Analyzed Gapminder health data parameters using AI tools to uncover regional indicators. Ran quick regressions, designed interactive visual assets, and deployed an automated analysis dashboard.
-                    </p>
-                </div>
-                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] font-mono text-slate-400">Tools: Julius, TheBricks</span>
-                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(2)">
-                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Week 3 Card -->
-            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="text">
-                <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 03</span>
-                        <span class="h-2.5 w-2.5 rounded-full bg-brand-emerald" title="Completed"></span>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">GenAI for Research & Text Analysis</h3>
-                    <p class="text-sm text-slate-400 line-clamp-3">
-                        Created semantic mapping structures and classification layers. Formulated automated review pipelines using LiteRev and Elicit for massive health and infectious disease text collections.
-                    </p>
-                </div>
-                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] font-mono text-slate-400">Tools: Elicit, LiteRev</span>
-                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(3)">
-                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Week 4 Card -->
-            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="automation">
-                <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 04</span>
-                        <span class="h-2.5 w-2.5 rounded-full bg-brand-emerald" title="Completed"></span>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Custom GPTs & Research Chatbots</h3>
-                    <p class="text-sm text-slate-400 line-clamp-3">
-                        Assembled context window limits and RAG nodes. Integrated customized knowledge base architectures containing research guidelines and CDC surveillance frameworks into Botpress workflow channels.
-                    </p>
-                </div>
-                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] font-mono text-slate-400">Tools: Botpress, Custom GPTs</span>
-                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(4)">
-                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Week 5 Card -->
-            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="automation">
-                <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 05</span>
-                        <span class="h-2.5 w-2.5 rounded-full bg-brand-gold" title="In Progress"></span>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">AI Agents & Task Automation</h3>
-                    <p class="text-sm text-slate-400 line-clamp-3">
-                        Formulating autonomous web browser control agents and complex email logic flows. Setting up automated monitoring triggers for public health journals to automate alert streams.
-                    </p>
-                </div>
-                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] font-mono text-slate-400">Tools: Browser Agents, Make</span>
-                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(5)">
-                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Week 6 Card -->
-            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="text">
-                <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 06</span>
-                        <span class="h-2.5 w-2.5 rounded-full bg-slate-600" title="Coming Soon"></span>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">GenAI for Comm & Outreach</h3>
-                    <p class="text-sm text-slate-400 line-clamp-3">
-                        Planning prompt strategies for scientific data visualization, video abstracts, and dynamic layman research summaries designed to share public health insights across digital channels with zero friction.
-                    </p>
-                </div>
-                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] font-mono text-slate-400">Tools: Video Gen, Midjourney</span>
-                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(6)">
-                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Week 7 Card -->
-            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="code text automation">
-                <div>
-                    <div class="flex justify-between items-center mb-4">
-                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEKS 7-8</span>
-                        <span class="h-2.5 w-2.5 rounded-full bg-slate-600" title="Coming Soon"></span>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Capstone Project & Showcase</h3>
-                    <p class="text-sm text-slate-400 line-clamp-3">
-                        Collaborating on a final AI-driven solution representing responsible AI practices. Merging microsimulation model parameter checks with automated data extraction pipelines.
-                    </p>
-                </div>
-                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
-                    <span class="text-[11px] font-mono text-slate-400">Tools: Full Stack AI Integration</span>
-                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(7)">
-                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
-                    </button>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- PROFESSIONAL HIGHLIGHT / CV TIMELINE SECTION -->
-    <section id="credentials" class="py-20 bg-[#0B132B]/60 border-y border-white/5 scroll-mt-24">
-        <div class="max-w-7xl mx-auto px-4">
-            
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                
-                <!-- Left Title Column -->
-                <div class="lg:col-span-4 space-y-4 lg:sticky lg:top-32">
-                    <div class="inline-flex items-center space-x-2">
-                        <span class="h-1 w-8 bg-brand-teal rounded-full"></span>
-                        <span class="text-xs font-mono tracking-widest text-brand-teal uppercase font-semibold">CAREER STACK & INTEL</span>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-white">Experience & Educational Pedigree</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        A synthesized history of over a decade driving scientific monitoring architectures, epidemic surveillance systems, and public health metrics analysis globally.
-                    </p>
-                    <div class="pt-4">
-                        <a href="#contact" class="inline-flex items-center text-sm font-bold text-brand-emerald hover:text-brand-gold transition">
-                            Request my complete scientific CV <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right Timeline/Milestones Column -->
-                <div class="lg:col-span-8 space-y-8">
-                    
-                    <!-- Item 1 -->
-                    <div class="relative pl-8 border-l-2 border-slate-800 space-y-2">
-                        <!-- Dot -->
-                        <div class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-brand-teal border-4 border-[#080C18]"></div>
-                        <span class="text-xs font-mono text-brand-teal uppercase tracking-wider block font-semibold">2024 — 2028 (Candidate)</span>
-                        <h3 class="text-xl font-bold text-white">PhD in Global Health</h3>
-                        <p class="text-sm font-semibold text-slate-300">Jomo Kenyatta University of Agriculture and Technology</p>
-                        <p class="text-xs text-slate-400 leading-relaxed mt-1">
-                            Focusing research strategies around epidemiological forecasting, sub-national healthcare constraints, and interactive digital intelligence systems.
-                        </p>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="relative pl-8 border-l-2 border-slate-800 space-y-2">
-                        <!-- Dot -->
-                        <div class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-brand-emerald border-4 border-[#080C18]"></div>
-                        <span class="text-xs font-mono text-brand-emerald uppercase tracking-wider block font-semibold">July 2025 — Feb 2026</span>
-                        <h3 class="text-xl font-bold text-white">Consultant - MERL Expert</h3>
-                        <p class="text-sm font-semibold text-slate-300">Washington State University</p>
-                        <p class="text-xs text-slate-400 leading-relaxed mt-1">
-                            Designed integrated monitoring systems for PBIDS 2.0 in close alignment with the CDC, Ministry of Health, and KEMRI priorities, ensuring robust event-based surveillance tracking.
-                        </p>
-                    </div>
-
-                    <!-- Item 3 -->
-                    <div class="relative pl-8 border-l-2 border-slate-800 space-y-2">
-                        <!-- Dot -->
-                        <div class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-brand-gold border-4 border-[#080C18]"></div>
-                        <span class="text-xs font-mono text-brand-gold uppercase tracking-wider block font-semibold">2019 — 2025</span>
-                        <h3 class="text-xl font-bold text-white">MERL Lead</h3>
-                        <p class="text-sm font-semibold text-slate-300">Gold Star Kenya</p>
-                        <p class="text-xs text-slate-400 leading-relaxed mt-1">
-                            Built interactive data dashboards using Power BI and electronic records systems. Oversaw compliance tracking, managed USAID & Global Fund grants, and facilitated collaborative learning loops.
-                        </p>
-                    </div>
-
-                    <!-- Item 4 -->
-                    <div class="relative pl-8 border-l-2 border-slate-800 space-y-2">
-                        <!-- Dot -->
-                        <div class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-brand-coral border-4 border-[#080C18]"></div>
-                        <span class="text-xs font-mono text-brand-coral uppercase tracking-wider block font-semibold">Prior Expertise Highlight</span>
-                        <h3 class="text-xl font-bold text-white">M&E Officer & Project Associate</h3>
-                        <p class="text-sm font-semibold text-slate-300">FHI360, Médecins Sans Frontières, PATH</p>
-                        <p class="text-xs text-slate-400 leading-relaxed mt-1">
-                            Directed Early Infant Diagnosis (EID) analysis for MSF, managed malnutrition datasets, worked on climate-smart agricultural indicators, and mapped WASH infrastructures against infectious diseases via spatial QGIS models.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CAPSTONE / HIGHLIGHT SHOWCASE -->
-    <section class="py-20 px-4 max-w-7xl mx-auto">
-        <div class="glass rounded-3xl p-8 md:p-12 glow-effect relative overflow-hidden">
-            <!-- Background glow -->
-            <div class="absolute -right-24 -bottom-24 w-80 h-80 rounded-full bg-brand-teal/20 blur-[80px] pointer-events-none"></div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                    <span class="text-xs font-mono uppercase tracking-widest text-brand-teal font-semibold px-3 py-1 bg-brand-teal/10 rounded-full">CAPSTONE SPOTLIGHT</span>
-                    <h3 class="text-2xl md:text-4xl font-bold text-white">Generative AI Agent for Epidemiological Synthesis & Literature Mapping</h3>
-                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-                        My upcoming course capstone centers on building a secure, custom multi-agent network that aggregates CDC alerts, WHO policy updates, and newly published PubMed literature. This system extracts crucial metadata, structures findings in formatted spreadsheets, and translates findings into clear decision briefings—all in minutes instead of hours.
-                    </p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="text-[10px] font-mono bg-white/5 border border-white/5 px-2.5 py-1 rounded-lg text-slate-300">RAG Node API</span>
-                        <span class="text-[10px] font-mono bg-white/5 border border-white/5 px-2.5 py-1 rounded-lg text-slate-300">Semantic Vector DB</span>
-                        <span class="text-[10px] font-mono bg-white/5 border border-white/5 px-2.5 py-1 rounded-lg text-slate-300">Automated Prompts</span>
-                        <span class="text-[10px] font-mono bg-white/5 border border-white/5 px-2.5 py-1 rounded-lg text-slate-300">JSON Parsing</span>
-                    </div>
-                </div>
-                <div class="lg:col-span-5 flex justify-center">
-                    <div class="relative h-64 w-64 md:h-72 md:w-72 bg-gradient-to-tr from-brand-cardDark to-[#1B2A4A] rounded-2xl border border-white/10 flex flex-col items-center justify-center p-6 text-center shadow-2xl">
-                        <div class="absolute top-4 left-4 h-3 w-3 rounded-full bg-brand-emerald"></div>
-                        <div class="h-16 w-16 rounded-full bg-brand-teal/10 flex items-center justify-center text-3xl text-brand-teal mb-4 animate-bounce">
-                            <i class="fa-solid fa-brain"></i>
-                        </div>
-                        <h4 class="font-extrabold text-white text-md">Simulation & Agent Loop</h4>
-                        <p class="text-xs text-slate-400 mt-2">Connecting disease modeling inputs to live synthesis reports with high-fidelity outputs.</p>
-                        <div class="mt-4 text-[10px] font-mono text-brand-emerald bg-brand-emerald/10 px-3 py-1 rounded-full">
-                            <div class="text-slate-900 font-extrabold">Active Integration Phase</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ANTI-SPAM CONTACT SECTION -->
-    <section id="contact" class="py-20 bg-[#0B132B]/60 border-t border-white/5 scroll-mt-24">
-        <div class="max-w-7xl mx-auto px-4">
-            
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                
-                <!-- Left Details -->
-                <div class="lg:col-span-5 space-y-6">
-                    <div class="inline-flex items-center space-x-2">
-                        <span class="h-1 w-8 bg-brand-teal rounded-full"></span>
-                        <span class="text-xs font-mono tracking-widest text-brand-teal uppercase font-semibold">INQUIRIES & DEALS</span>
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-extrabold text-white">Let's Connect Safely</h2>
-                    <p class="text-slate-400 leading-relaxed text-sm">
-                        Interested in incorporating secure Generative AI pipelines into your M&E strategies, health research models, or surveillance frameworks? Send me a quick message. To avoid spam, my direct email is protected via this secure message box.
-                    </p>
-
-                    <!-- Safe contacts info -->
-                    <div class="space-y-4 pt-4">
-                        <div class="flex items-center space-x-3.5">
-                            <div class="h-11 w-11 rounded-xl bg-brand-teal/10 text-brand-teal flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-slate-500 block uppercase font-mono tracking-wider">Based In</span>
-                                <span class="text-sm font-bold text-white">Nairobi, Kenya</span>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center space-x-3.5">
-                            <div class="h-11 w-11 rounded-xl bg-brand-emerald/10 text-brand-emerald flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-slate-500 block uppercase font-mono tracking-wider">Professional Phone</span>
-                                <span class="text-sm font-bold text-white">+254 725 937 401</span>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center space-x-3.5">
-                            <div class="h-11 w-11 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-lg">
-                                <i class="fa-solid fa-share-nodes"></i>
-                            </div>
-                            <div>
-                                <span class="text-xs text-slate-500 block uppercase font-mono tracking-wider">Professional Network</span>
-                                <div class="flex space-x-3 mt-1">
-                                    <a href="#" class="text-brand-teal hover:text-white transition" title="LinkedIn"><i class="fa-brands fa-linkedin text-lg"></i></a>
-                                    <a href="#" class="text-brand-teal hover:text-white transition" title="ORCID"><i class="fa-solid fa-book-journal-whills text-lg"></i></a>
-                                    <a href="#" class="text-brand-teal hover:text-white transition" title="GitHub"><i class="fa-brands fa-github text-lg"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Form -->
-                <div class="lg:col-span-7">
-                    <div class="glass p-8 rounded-3xl glow-effect space-y-6">
-                        <h3 class="text-xl font-bold text-white">Send a Secure Message</h3>
-                        
-                        <form id="secureContactForm" class="space-y-4" onsubmit="handleFormSubmit(event)">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div class="space-y-2">
-                                    <label class="text-xs font-mono text-slate-400 uppercase block">Your Name</label>
-                                    <input type="text" required class="w-full bg-slate-900/60 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-teal transition" placeholder="John Doe">
-                                </div>
-                                <div class="space-y-2">
-                                    <label class="text-xs font-mono text-slate-400 uppercase block">Your Organization</label>
-                                    <input type="text" class="w-full bg-slate-900/60 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-teal transition" placeholder="e.g. WHO, USAID, NGO">
-                                </div>
-                            </div>
-
-                            <div class="space-y-2">
-                                <label class="text-xs font-mono text-slate-400 uppercase block">Return Correspondence / Contact Info</label>
-                                <input type="text" required class="w-full bg-slate-900/60 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-teal transition" placeholder="Your Phone or Link (e.g. LinkedIn url)">
-                            </div>
-
-                            <div class="space-y-2">
-                                <label class="text-xs font-mono text-slate-400 uppercase block">Project Description / Message</label>
-                                <textarea rows="4" required class="w-full bg-slate-900/60 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-teal transition" placeholder="How can we collaborate?"></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full py-4 bg-gradient-to-r from-brand-teal via-brand-emerald to-brand-gold text-slate-900 font-bold uppercase tracking-wider text-xs rounded-xl transition duration-300 hover:opacity-95 shadow-lg">
-                                Transmit Encrypted Message <i class="fa-solid fa-paper-plane ml-2"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="py-12 bg-[#050B19] border-t border-white/5 text-center text-slate-500 text-xs">
-        <div class="max-w-7xl mx-auto px-4 space-y-4">
-            <div class="flex items-center justify-center space-x-2">
-                <span class="h-2 w-2 rounded-full bg-brand-emerald"></span>
-                <span class="font-mono text-slate-400">Generative AI for Work & Research Portfolio</span>
-            </div>
-            <p>&copy; 2026 Osoti Osoti. Built with precision, compliance & transparency.</p>
-            <p class="text-[10px] text-slate-600">The credentials, modules, and curricula shown here correspond directly to Graph Courses networks & official documents.</p>
-        </div>
-    </footer>
-
-    <!-- INTERACTIVE SUBMISSION DETAILS MODAL (Hidden by default) -->
-    <div id="detailsModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden transition-opacity duration-300">
-        <div class="glass w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl relative transform scale-95 transition-transform duration-300" id="modalContent">
-            
-            <!-- Modal Header -->
-            <div class="px-6 py-5 bg-[#0B132B]/80 border-b border-white/5 flex items-center justify-between">
-                <div>
-                    <span id="modalWeekBadge" class="text-[10px] font-mono font-extrabold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full uppercase tracking-wider">Week 01</span>
-                    <h3 id="modalTitle" class="text-xl font-bold text-white mt-2">Loading Module...</h3>
-                </div>
-                <button class="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition" onclick="closeDetailsModal()">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-
-            <!-- Modal Body -->
-            <div class="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
-                
-                <div class="space-y-2">
-                    <span class="text-xs font-mono uppercase text-brand-emerald block font-semibold">Technical Topics Covered:</span>
-                    <ul id="modalTopics" class="list-disc list-inside text-sm text-slate-300 space-y-1.5">
-                        <!-- Dynamic content -->
-                    </ul>
-                </div>
-
-                <div class="space-y-2">
-                    <span class="text-xs font-mono uppercase text-brand-gold block font-semibold">Key Deliverables & Tasks:</span>
-                    <p id="modalDeliverables" class="text-sm text-slate-300 leading-relaxed">
-                        Loading deliverables details...
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="p-3 bg-white/5 rounded-xl border border-white/5">
-                        <span class="text-[10px] uppercase font-mono text-slate-400 block">AI Tools Leveraged</span>
-                        <span id="modalTools" class="text-sm font-bold text-white block mt-1">ChatGPT Canvas, Replit</span>
-                    </div>
-                    <div class="p-3 bg-white/5 rounded-xl border border-white/5">
-                        <span class="text-[10px] uppercase font-mono text-slate-400 block">Submission Status</span>
-                        <span id="modalStatus" class="text-sm font-bold text-brand-emerald block mt-1">Completed</span>
-                    </div>
-                </div>
-
-                <div id="modalLinkContainer" class="p-4 bg-brand-teal/5 rounded-2xl border border-brand-teal/10 flex items-start space-x-3">
-                    <div class="p-2 bg-brand-teal/10 text-brand-teal rounded-lg mt-0.5">
-                        <i class="fa-solid fa-link"></i>
-                    </div>
-                    <div>
-                        <h5 class="text-xs font-bold text-white">Artifact Access Node</h5>
-                        <p id="modalLinkText" class="text-xs text-slate-400 mt-1">
-                            A live demonstration link or GitHub repository showcasing this exact deliverable will be connected here as the cohort progresses.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Modal Footer -->
-            <div class="px-6 py-4 bg-[#0B132B]/80 border-t border-white/5 flex justify-end">
-                <button class="px-5 py-2.5 bg-white/5 hover:bg-white/10 text-white rounded-xl text-sm font-semibold transition" onclick="closeDetailsModal()">
-                    Dismiss Panel
-                </button>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- CUSTOM TOAST NOTIFICATION -->
-    <div id="toast" class="fixed bottom-6 right-6 glass px-6 py-4 rounded-2xl shadow-2xl z-[100] transform translate-y-20 opacity-0 transition-all duration-300 flex items-center space-x-3 pointer-events-none">
-        <div id="toastIcon" class="h-8 w-8 rounded-lg flex items-center justify-center text-sm">
-            <!-- Dynamic -->
-        </div>
-        <div>
-            <span id="toastMessage" class="text-sm font-semibold text-white">Action Completed!</span>
-        </div>
-    </div>
-
-    <!-- MAIN JAVASCRIPT & INTERACTIONS -->
-    <script>
-        // Module Data representing the 7 modules of the Graph course curriculum
-        const moduleDetails = {
-            1: {
-                week: "Week 01",
-                title: "Websites, Documents & Presentations",
-                topics: [
-                    "How Large Language Models (LLMs) are trained & popular providers",
-                    "Generating structural Markdown, LaTeX, and custom HTML outputs",
-                    "Building sleek research website structures with ChatGPT Canvas and Replit",
-                    "Structuring complex research and monitoring dossiers via Markdown logs",
-                    "Interactive presentation templates for global scientific health dissemination"
-                ],
-                deliverables: "Design a personal research web template, format markdown scientific papers, and map high-end slide presentations using markdown-compatible assistants.",
-                tools: "ChatGPT Canvas, Replit, Marp",
-                status: "Completed & Evaluated",
-                statusClass: "text-brand-emerald",
-                link: null
-            },
-            2: {
-                week: "Week 02",
-                title: "AI-Automated Data Analysis",
-                topics: [
-                    "Quick data analytics & cleansing via ChatGPT Code Interpreter",
-                    "Ingesting health datasets into Julius AI for automated predictive pipelines",
-                    "Performing file transformations and batch manipulations dynamically",
-                    "Building custom dashboard trackers using automated components in TheBricks",
-                    "Executing spreadsheet automations for recursive indicators and regressions"
-                ],
-                deliverables: "Ingested multi-county and Gapminder indicator data structures to evaluate global development trajectories, outputted robust public health metrics models, and generated localized visualizations.",
-                tools: "Julius, Code Interpreter, Windsurf, TheBricks",
-                status: "Completed & Evaluated",
-                statusClass: "text-brand-emerald",
-                link: "./week2.html"
-            },
-            3: {
-                week: "Week 03",
-                title: "GenAI for Research & Text Analysis",
-                topics: [
-                    "Conducting accelerated search strategies and reviews via LiteRev and Elicit",
-                    "Text categorization and automated organization of voluminous document libraries",
-                    "Constructing conceptual knowledge mapping networks from scientific document logs",
-                    "Automated briefing summarizing techniques for disease and clinical guidelines"
-                ],
-                deliverables: "Extracted parameters from scientific abstracts regarding nutritional supplements (SQ-LNS / MMS) and mapped research topics using semantic text groupings.",
-                tools: "Elicit, LiteRev, ChatGPT Canvas",
-                status: "Completed & Evaluated",
-                statusClass: "text-brand-emerald",
-                link: null
-            },
-            4: {
-                week: "Week 04",
-                title: "Custom GPTs and Chatbots",
-                topics: [
-                    "LLM chat architectures, custom context metrics, and RAG systems",
-                    "Building custom targeted GPTs to parse local monitoring standards and SOPs",
-                    "Structuring interactive workflows inside Botpress",
-                    "Connecting knowledge bases filled with county data and WASH project parameters"
-                ],
-                deliverables: "Engineered a custom assistant GPT trained specifically to guide clinical staff on WHO staffing benchmarks and event-based public health metrics.",
-                tools: "Botpress, ChatGPT builder, Custom RAG Nodes",
-                status: "Completed & Evaluated",
-                statusClass: "text-brand-emerald",
-                link: null
-            },
-            5: {
-                week: "Week 05",
-                title: "AI for Task Automation",
-                topics: [
-                    "Orchestrating agent workflows and automated multi-app triggers",
-                    "Mapping web scraping tasks using autonomous browser agents",
-                    "Setting automated notification logic loops for real-time surveillance",
-                    "Automated summary dispatches for clinical email systems"
-                ],
-                deliverables: "Developing an autonomous web monitoring routine that scrapes epidemiological alerts and formats weekly email briefs for medical directors.",
-                tools: "Make, Browser Agents, Custom APIs",
-                status: "In Progress / Active Development",
-                statusClass: "text-brand-gold",
-                link: null
-            },
-            6: {
-                week: "Week 06",
-                title: "GenAI for Communication & Outreach",
-                topics: [
-                    "Generating dynamic summaries specialized for differing audiences",
-                    "Using Midjourney or prompt libraries to layout clean figures for papers",
-                    "Producing quick scientific video abstracts and explanations",
-                    "Outreach scheduling automations to share research outcomes transparently"
-                ],
-                deliverables: "Structuring high-fidelity visual diagrams illustrating Balanced Energy Protein causal pathways and producing brief video abstracts explaining epidemiological findings.",
-                tools: "Video AI Generators, Midjourney, Marp Slides",
-                status: "Scheduled / Upcoming",
-                statusClass: "text-slate-400",
-                link: null
-            },
-            7: {
-                week: "Weeks 07-8",
-                title: "Capstone Project & Showcase",
-                topics: [
-                    "Peer feedback loops & progressive diagnostic tests",
-                    "Addressing integration limits & secure data compliance protocols",
-                    "Assembling the finalized tool for scientific and clinical deployment",
-                    "Public Q&A presentation demonstrating responsible AI practices"
-                ],
-                deliverables: "Assembling an end-to-end AI workflow that handles multi-source clinical inputs, extracts variables via structured LLM templates, and generates localized public health summaries.",
-                tools: "Integrative AI Agents, Python pipelines",
-                status: "Scheduled / Upcoming",
-                statusClass: "text-slate-400",
-                link: null
-            }
-        };
-
-        // Modal triggers
-        function openDetailsModal(moduleId) {
-            const data = moduleDetails[moduleId];
-            if (!data) return;
-
-            document.getElementById('modalWeekBadge').innerText = data.week;
-            document.getElementById('modalTitle').innerText = data.title;
-            document.getElementById('modalDeliverables').innerText = data.deliverables;
-            document.getElementById('modalTools').innerText = data.tools;
-            document.getElementById('modalStatus').innerText = data.status;
-            
-            // Set status color class
-            const statusNode = document.getElementById('modalStatus');
-            statusNode.className = "text-sm font-bold block mt-1 " + data.statusClass;
-
-            // Generate Topics List
-            const topicsList = document.getElementById('modalTopics');
-            topicsList.innerHTML = '';
-            data.topics.forEach(topic => {
-                const li = document.createElement('li');
-                li.innerText = topic;
-                topicsList.appendChild(li);
-            });
-
-            // Context Link Configuration
-            const linkTextNode = document.getElementById('modalLinkText');
-            if (data.link) {
-                linkTextNode.innerHTML = `<a href="${data.link}" target="_blank" class="inline-flex items-center text-brand-teal hover:text-brand-gold underline font-semibold transition mt-1">Review "Automated Data Analysis" Live Artifact <i class="fa-solid fa-square-arrow-up-right ml-1.5 text-xs"></i></a>`;
-            } else {
-                linkTextNode.innerText = "A live demonstration link or GitHub repository showcasing this exact deliverable will be connected here as the cohort progresses.";
-            }
-
-            // Show Modal with Animation
-            const modal = document.getElementById('detailsModal');
-            const content = document.getElementById('modalContent');
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modal.classList.add('opacity-100');
-                content.classList.remove('scale-95');
-                content.classList.add('scale-100');
-            }, 10);
-        }
-
-        function closeDetailsModal() {
-            const modal = document.getElementById('detailsModal');
-            const content = document.getElementById('modalContent');
-            modal.classList.remove('opacity-100');
-            content.classList.remove('scale-100');
-            content.classList.add('scale-95');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 300);
-        }
-
-        // Close modal when clicking outside content
-        document.getElementById('detailsModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeDetailsModal();
-            }
-        });
-
-        // Filter functionality
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const cards = document.querySelectorAll('#projectsGrid > div');
-
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', function() {
-                // Update button styles
-                filterButtons.forEach(b => {
-                    b.className = "filter-btn px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition bg-white/5 hover:bg-white/10 text-slate-300";
-                });
-                this.className = "filter-btn px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition bg-gradient-to-r from-brand-teal to-brand-emerald text-slate-900 shadow-md";
-
-                const category = this.getAttribute('data-category');
-
-                cards.forEach(card => {
-                    const tags = card.getAttribute('data-tags');
-                    if (category === 'all' || tags.includes(category)) {
-                        card.style.display = 'flex';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'scale(1)';
-                        }, 50);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'scale(0.95)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
-
-        // Custom Toast Notification
-        function showToast(message, type = 'success') {
-            const toast = document.getElementById('toast');
-            const icon = document.getElementById('toastIcon');
-            const msgNode = document.getElementById('toastMessage');
-
-            msgNode.innerText = message;
-            
-            if (type === 'success') {
-                icon.className = "h-8 w-8 rounded-lg flex items-center justify-center text-sm bg-brand-emerald/10 text-brand-emerald";
-                icon.innerHTML = '<i class="fa-solid fa-check"></i>';
-            } else {
-                icon.className = "h-8 w-8 rounded-lg flex items-center justify-center text-sm bg-brand-coral/10 text-brand-coral";
-                icon.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
-            }
-
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
-
-            setTimeout(() => {
-                toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 4000);
-        }
-
-        // Handle Contact Form Submit without exposing email to crawlers
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            
-            // Collect dummy variables to simulate submission
-            const inputs = event.target.querySelectorAll('input, textarea');
-            let filled = true;
-            inputs.forEach(input => {
-                if (!input.value.trim() && input.required) {
-                    filled = false;
-                }
-            });
-
-            if (filled) {
-                showToast("Your message was encrypted & transmitted successfully!", "success");
-                event.target.reset();
-            } else {
-                showToast("Please fill in all mandatory parameters.", "error");
-            }
-        }
-
-        // Dark/Light Theme toggling implementation
-        const themeToggle = document.getElementById('themeToggle');
-        let isDark = true; // default setup
-
-        themeToggle.addEventListener('click', () => {
-            isDark = !isDark;
-            const icon = themeToggle.querySelector('i');
-            
-            if (!isDark) {
-                // Change to Light Mode
-                document.documentElement.classList.add('light-theme');
-                document.body.style.backgroundColor = '#F8FAFC';
-                document.body.style.color = '#0F172A';
-                icon.className = "fa-solid fa-sun text-md";
-                
-                // Adjust navbar
-                const navbar = document.getElementById('navbar');
-                navbar.className = "glass-light rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300";
-                
-                // Adjust navigation text colours
-                document.querySelectorAll('nav a, #mobileMenu a').forEach(el => {
-                    el.classList.remove('text-slate-300');
-                    el.classList.add('text-slate-700');
-                });
-                
-                showToast("Switched to clean light palette", "success");
-            } else {
-                // Revert to Dark Mode
-                document.documentElement.classList.remove('light-theme');
-                document.body.style.backgroundColor = '#080C18';
-                document.body.style.color = '#F3F4F6';
-                icon.className = "fa-solid fa-moon text-md";
-                
-                const navbar = document.getElementById('navbar');
-                navbar.className = "glass rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300";
-                
-                document.querySelectorAll('nav a, #mobileMenu a').forEach(el => {
-                    el.classList.remove('text-slate-700');
-                    el.classList.add('text-slate-300');
-                });
-                
-                showToast("Switched to premium slate dark palette", "success");
-            }
-        });
-
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
-        });
-
-        // Close mobile menu on anchor click
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
-            });
-        });
-    </script>
+    <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1] overflow-hidden">
+        <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-brand-teal/10 blur-[120px]"></div>
+        <div class="absolute bottom-[10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-brand-emerald/5 blur-[150px]"></div>
+        <div class="absolute top-[40%] left-[30%] w-[40%] h-[40%] rounded-full bg-brand-gold/5 blur-[130px]"></div>
+    </div>
+
+    <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[92%] max-w-7xl z-50">
+        <nav class="glass rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300" id="navbar">
+            <div class="flex items-center space-x-3">
+                <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-brand-teal via-brand-emerald to-brand-gold p-0.5 flex items-center justify-center text-slate-900 font-extrabold text-lg shadow-lg shadow-brand-teal/20">
+                    <img src="https://raw.githubusercontent.com/Osoti-Osoti/graph-genai-portfolio/main/Osoti.jpg" 
+                         onerror="this.style.display='none'; document.getElementById('navInitials').classList.remove('hidden');" 
+                         alt="Osoti Osoti" 
+                         class="w-full h-full object-cover rounded-[10px]">
+                    <span id="navInitials" class="hidden text-slate-900 font-extrabold text-sm">OO</span>
+                </div>
+                <div>
+                    <span class="text-white font-bold tracking-tight block">Osoti Osoti</span>
+                    <span class="text-[10px] text-brand-teal font-mono uppercase tracking-widest block">AI for Research & MERL</span>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-1 font-medium text-sm">
+                <a href="#hero" class="px-4 py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">Home</a>
+                <a href="#about" class="px-4 py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">About</a>
+                <a href="#course" class="px-4 py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">The Course</a>
+                <a href="#submissions" class="px-4 py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">AI Submissions</a>
+                <a href="#credentials" class="px-4 py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">Profile</a>
+            </div>
+
+            <div class="flex items-center space-x-3">
+                <button id="themeToggle" class="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition duration-200" title="Toggle Theme">
+                    <i class="fa-solid fa-moon text-md"></i>
+                </button>
+                <a href="#contact" class="hidden sm:inline-flex items-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-slate-900 bg-gradient-to-r from-brand-teal to-brand-emerald hover:from-brand-teal hover:to-brand-gold rounded-xl transition-all duration-300 shadow-md hover:shadow-brand-teal/20">
+                    Work With Me <i class="fa-solid fa-arrow-right ml-2 text-[10px]"></i>
+                </a>
+                <button class="md:hidden p-2 text-slate-300 hover:text-white" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div class="hidden mt-2 w-full glass rounded-2xl p-4 flex-col space-y-2 text-center md:hidden" id="mobileMenu">
+            <a href="#hero" class="block py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">Home</a>
+            <a href="#about" class="block py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">About Me</a>
+            <a href="#course" class="block py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">The Course</a>
+            <a href="#submissions" class="block py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">Submissions</a>
+            <a href="#credentials" class="block py-2 text-slate-300 hover:text-white transition rounded-lg hover:bg-white/5">Experience</a>
+            <a href="#contact" class="block py-2 text-brand-teal font-semibold transition rounded-lg hover:bg-white/5">Contact</a>
+        </div>
+    </header>
+
+    <section id="hero" class="relative pt-36 pb-20 md:pt-48 md:pb-32 px-4 max-w-7xl mx-auto flex flex-col items-center justify-center text-center">
+        
+        <div class="relative w-32 h-32 md:w-36 md:h-36 mx-auto mb-6 rounded-full p-1 bg-gradient-to-tr from-brand-teal via-brand-emerald to-brand-gold shadow-2xl shadow-brand-teal/20 hover:scale-105 transition-all duration-300 group cursor-pointer">
+            <div class="w-full h-full rounded-full overflow-hidden bg-brand-dark flex items-center justify-center border border-white/10 relative">
+                <img src="https://raw.githubusercontent.com/Osoti-Osoti/graph-genai-portfolio/main/Osoti.jpg" 
+                     onerror="this.onerror=null; this.src='https://github.com/Osoti-Osoti/graph-genai-portfolio/blob/main/Osoti.jpg?raw=true';" 
+                     alt="Osoti Osoti" 
+                     class="w-full h-full object-cover rounded-full transition duration-300 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-2">
+                    <span class="text-[9px] font-mono tracking-wider text-white uppercase bg-black/50 px-2 py-0.5 rounded-full">MERL Lead</span>
+                </div>
+            </div>
+            <span class="absolute bottom-2 right-2 flex h-4 w-4">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-emerald opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-4 w-4 bg-brand-emerald border-2 border-[#080C18]"></span>
+            </span>
+        </div>
+
+        <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-brand-teal/10 to-brand-emerald/10 border border-brand-teal/30 px-4 py-1.5 rounded-full mb-6 animate-pulse">
+            <span class="h-2 w-2 rounded-full bg-brand-emerald"></span>
+            <span class="text-xs font-mono tracking-wide text-brand-teal uppercase">The GRAPH Courses Cohort — University of Geneva</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight max-w-5xl leading-tight">
+            Bridging Global Health <span class="gradient-text">MERL</span> with <br class="hidden md:inline">
+            <span class="relative">
+                Generative AI Systems
+                <span class="absolute bottom-1 left-0 w-full h-1.5 bg-gradient-to-r from-brand-teal via-brand-emerald to-brand-gold rounded-full opacity-60"></span>
+            </span>
+        </h1>
+
+        <p class="mt-8 text-base sm:text-lg md:text-xl text-slate-400 max-w-3xl leading-relaxed">
+            I am <strong class="text-white">Osoti Osoti</strong>, a veteran Public Health, MERL Lead, and PhD Candidate. 
+            This portfolio showcases my professional mastery of no-code AI tools, prompt engineering, text analysis pipelines, 
+            and interactive agent automations.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center z-10">
+            <a href="#submissions" class="px-8 py-4 w-full sm:w-auto font-semibold rounded-2xl bg-gradient-to-r from-brand-teal via-brand-emerald to-brand-gold text-slate-900 transition-all duration-300 hover:scale-[1.03] shadow-lg shadow-brand-teal/15 text-center flex items-center justify-center">
+                <i class="fa-solid fa-bolt mr-2 text-sm"></i> View Course Submissions
+            </a>
+            <a href="#about" class="px-8 py-4 w-full sm:w-auto font-semibold rounded-2xl bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-white/20 transition-all duration-300 text-center flex items-center justify-center">
+                Explore My MERL Profile
+            </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 w-full max-w-5xl">
+            <div class="glass p-5 rounded-2xl glow-effect text-center">
+                <div class="text-3xl md:text-4xl font-extrabold text-brand-teal">10+</div>
+                <div class="text-xs text-slate-400 uppercase tracking-widest font-mono mt-1">Years M&E Experience</div>
+            </div>
+            <div class="glass p-5 rounded-2xl glow-effect text-center">
+                <div class="text-3xl md:text-4xl font-extrabold text-brand-emerald">PhD (c)</div>
+                <div class="text-xs text-slate-400 uppercase tracking-widest font-mono mt-1">Global Health Research</div>
+            </div>
+            <div class="glass p-5 rounded-2xl glow-effect text-center">
+                <div class="text-3xl md:text-4xl font-extrabold text-brand-gold">$40M+</div>
+                <div class="text-xs text-slate-400 uppercase tracking-widest font-mono mt-1">Grant Funds Managed</div>
+            </div>
+            <div class="glass p-5 rounded-2xl glow-effect text-center">
+                <div class="text-3xl md:text-4xl font-extrabold text-brand-coral">8 Weeks</div>
+                <div class="text-xs text-slate-400 uppercase tracking-widest font-mono mt-1">Intensive GenAI Mastery</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 px-4 max-w-7xl mx-auto scroll-mt-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center space-x-2">
+                    <span class="h-1 w-8 bg-brand-teal rounded-full"></span>
+                    <span class="text-xs font-mono tracking-widest text-brand-teal uppercase font-semibold">ABOUT ME</span>
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white">
+                    Pioneering Adaptive AI in Global Health Monitoring, Evaluation & Research
+                </h2>
+                
+                <p class="text-slate-300 leading-relaxed text-lg">
+                    As a results-oriented PhD candidate and lead MERL professional, I specialize in translating complex health and socio-economic data into highly actionable policy briefs and decision dashboards. 
+                </p>
+                <p class="text-slate-400 leading-relaxed">
+                    Over the past decade, I have directed large-scale systems across East Africa in collaboration with major partners including 
+                    <strong class="text-brand-teal">USAID, CDC, the Safaricom Foundation, KEMRI,</strong> and the <strong class="text-brand-teal">Global Fund/MoH</strong>. 
+                    I enrolled in <em>Generative AI for Work & Research</em> to master safe, transparent automation mechanisms—applying LLMs, agent workflows, and semantic search algorithms directly to epidemiological monitoring and data intelligence.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2.5 rounded-lg bg-brand-teal/10 text-brand-teal mt-0.5">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Adaptive CLA Frameworks</h4>
+                            <p class="text-xs text-slate-400 mt-1">Facilitating deep collaborative learning & action loops across counties.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2.5 rounded-lg bg-brand-emerald/10 text-brand-emerald mt-0.5">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Responsible Automation</h4>
+                            <p class="text-xs text-slate-400 mt-1">Leveraging secure custom GPTs, RAG nodes, and agent orchestration.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2.5 rounded-lg bg-brand-gold/10 text-brand-gold mt-0.5">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Advanced Tech Stack</h4>
+                            <p class="text-xs text-slate-400 mt-1">Python, Power BI, STATA, QGIS, and custom LLM micro-services.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="p-2.5 rounded-lg bg-brand-coral/10 text-brand-coral mt-0.5">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Published Researcher</h4>
+                            <p class="text-xs text-slate-400 mt-1">Experienced peer-mentor and international conference speaker.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 space-y-6">
+                <div class="glass p-6 rounded-3xl glow-effect space-y-6">
+                    <h3 class="text-xl font-bold text-white flex items-center">
+                        <i class="fa-solid fa-wand-magic-sparkles mr-2.5 text-brand-teal"></i> AI & MERL Skill Integration
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1.5">
+                                <span>LLMs & PROMPT ENGINEERING</span>
+                                <span class="text-brand-teal">95%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-brand-teal to-brand-emerald rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1.5">
+                                <span>AI-AUTOMATED DATA ANALYSIS (Julius, Code Int.)</span>
+                                <span class="text-brand-emerald">90%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-brand-emerald to-brand-gold rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1.5">
+                                <span>CUSTOM GPTS & RAG WORKFLOWS</span>
+                                <span class="text-brand-gold">85%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-brand-gold to-brand-coral rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1.5">
+                                <span>LITERATURE SYNTHESIS (Elicit / LiteRev)</span>
+                                <span class="text-brand-coral">90%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-brand-coral to-brand-teal rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-mono text-slate-300 mb-1.5">
+                                <span>PYTHON FOR DATA SCIENCE</span>
+                                <span class="text-brand-teal">80%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-brand-teal to-brand-emerald rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 bg-white/5 rounded-2xl border border-white/5">
+                        <span class="text-xs font-mono uppercase text-brand-gold block font-semibold mb-1">Current Research Focus</span>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Simulating sub-national health and economic burdens (DALYs averted) and integrating effect modifiers in maternal & neonatal health microsimulation engines.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="course" class="py-20 bg-[#0B132B]/60 border-y border-white/5 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="inline-flex items-center space-x-2">
+                    <span class="h-1 w-8 bg-brand-emerald rounded-full"></span>
+                    <span class="text-xs font-mono tracking-widest text-brand-emerald uppercase font-semibold">THE ACADEMIC PROGRAM</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white">Generative AI for Work & Research</h2>
+                <p class="text-slate-400">
+                    A rigorous 8-week bootcamp program hosted by <strong class="text-white">The GRAPH Courses</strong> (based at the University of Geneva, Switzerland) combining technical rigor with practical, clinical & scientific task automation.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="glass p-8 rounded-2xl glow-effect space-y-4">
+                    <div class="h-12 w-12 rounded-xl bg-brand-teal/10 text-brand-teal flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Academic Rigor</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Backed by academic institutions and international health leaders (Geneva Digital Health Hub, World Health Organization partners). Focused on transparency, ethics, and reproducible prompts.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-2xl glow-effect space-y-4">
+                    <div class="h-12 w-12 rounded-xl bg-brand-emerald/10 text-brand-emerald flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Practical No-Code Systems</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Focused on building automated dashboards, customized chatbot helpers, agent workflow loops, and literature-mapping pipelines without writing complex boilerplate code.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-2xl glow-effect space-y-4">
+                    <div class="h-12 w-12 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Global Cohort Network</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Weekly live workshops, collaborative project peer reviews, and direct scientific evaluation based on a rigorous grading rubric (passing score of 80% to earn the certification).
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="mt-16 text-center space-y-4">
+                <span class="text-xs uppercase font-mono tracking-widest text-slate-500 block">Affiliated Networks & Partner Systems</span>
+                <div class="flex flex-wrap items-center justify-center gap-6 md:gap-12 opacity-50 grayscale hover:grayscale-0 transition duration-300">
+                    <span class="text-sm font-bold text-white tracking-widest">UNIVERSITÉ DE GENÈVE</span>
+                    <span class="text-sm font-bold text-white tracking-widest">WORLD HEALTH ORGANIZATION</span>
+                    <span class="text-sm font-bold text-white tracking-widest">EPILIMINOLOGY NETWORK</span>
+                    <span class="text-sm font-bold text-white tracking-widest">SWISS SCHOOL OF PUBLIC HEALTH</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="submissions" class="py-20 px-4 max-w-7xl mx-auto scroll-mt-24">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div class="space-y-4">
+                <div class="inline-flex items-center space-x-2">
+                    <span class="h-1 w-8 bg-brand-gold rounded-full"></span>
+                    <span class="text-xs font-mono tracking-widest text-brand-gold uppercase font-semibold">WEEKLY MODULE PORTFOLIO</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white">Course Artifacts & Deliverables</h2>
+                <p class="text-slate-400 max-w-2xl">
+                    Detailed trackers for all my weekly course submissions. Use the filters below to explore tasks covering LLM design, automated pipelines, custom RAG architecture, and literature mapping.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap gap-2" id="filterContainer">
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition bg-gradient-to-r from-brand-teal to-brand-emerald text-slate-900 shadow-md" data-category="all">All Modules</button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition bg-white/5 hover:bg-white/10 text-slate-300" data-category="code">Web & Data</button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition bg-white/5 hover:bg-white/10 text-slate-300" data-category="text">Research & Literature</button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition bg-white/5 hover:bg-white/10 text-slate-300" data-category="automation">Custom Bots & Flows</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
+            
+            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="code">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 01</span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-brand-emerald" title="Completed"></span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Websites, Documents & Presentations</h3>
+                    <p class="text-sm text-slate-400 line-clamp-3">
+                        Explored Large Language Model inner workings, trained weights, and provider structures. Generated complex HTML layouts, customized Markdown logs, and designed scientific presentations.
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-slate-400">Tools: ChatGPT Canvas, Replit</span>
+                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(1)">
+                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="code">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 02</span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-brand-emerald" title="Completed"></span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">AI-Automated Data Analysis</h3>
+                    <p class="text-sm text-slate-400 line-clamp-3">
+                        Analyzed Gapminder health data parameters using AI tools to uncover regional indicators. Ran quick regressions, designed interactive visual assets, and deployed an automated analysis dashboard.
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-slate-400">Tools: Julius, TheBricks</span>
+                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(2)">
+                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="text code">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 03</span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-brand-emerald" title="Completed"></span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">GenAI for Research & Text Analysis</h3>
+                    <p class="text-sm text-slate-400 line-clamp-3">
+                        Created semantic mapping structures and classification layers. Formulated automated review pipelines using LiteRev and Elicit for massive health and infectious disease text collections.
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-slate-400">Tools: Elicit, LiteRev, Sheets LLM</span>
+                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(3)">
+                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="automation">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 04</span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-brand-emerald" title="Completed"></span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Custom GPTs & Research Chatbots</h3>
+                    <p class="text-sm text-slate-400 line-clamp-3">
+                        Assembled context window limits and RAG nodes. Integrated customized knowledge base architectures containing research guidelines and CDC surveillance frameworks into Botpress workflow channels.
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-slate-400">Tools: Botpress, Custom GPTs</span>
+                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(4)">
+                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="automation">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 05</span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-brand-gold" title="In Progress"></span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">AI Agents & Task Automation</h3>
+                    <p class="text-sm text-slate-400 line-clamp-3">
+                        Formulating autonomous web browser control agents and complex email logic flows. Setting up automated monitoring triggers for public health journals to automate alert streams.
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-slate-400">Tools: Browser Agents, Make</span>
+                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(5)">
+                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="text">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEK 06</span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-slate-600" title="Coming Soon"></span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">GenAI for Comm & Outreach</h3>
+                    <p class="text-sm text-slate-400 line-clamp-3">
+                        Planning prompt strategies for scientific data visualization, video abstracts, and dynamic layman research summaries designed to share public health insights across digital channels with zero friction.
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-slate-400">Tools: Video Gen, Midjourney</span>
+                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(6)">
+                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="glass rounded-3xl p-6 glow-effect space-y-4 flex flex-col justify-between transition duration-300 hover:scale-[1.02] hover:-translate-y-1" data-tags="code text automation">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-mono font-bold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full">WEEKS 7-8</span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-slate-600" title="Coming Soon"></span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Capstone Project & Showcase</h3>
+                    <p class="text-sm text-slate-400 line-clamp-3">
+                        Collaborating on a final AI-driven solution representing responsible AI practices. Merging microsimulation model parameter checks with automated data extraction pipelines.
+                    </p>
+                </div>
+                <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-slate-400">Tools: Full Stack AI Integration</span>
+                    <button class="text-xs font-bold text-brand-teal hover:text-brand-gold flex items-center transition" onclick="openDetailsModal(7)">
+                        View Deliverables <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="credentials" class="py-20 bg-[#0B132B]/60 border-y border-white/5 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <div class="lg:col-span-4 space-y-4 lg:sticky lg:top-32">
+                    <div class="inline-flex items-center space-x-2">
+                        <span class="h-1 w-8 bg-brand-teal rounded-full"></span>
+                        <span class="text-xs font-mono tracking-widest text-brand-teal uppercase font-semibold">CAREER STACK & INTEL</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white">Experience & Educational Pedigree</h2>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        A synthesized history of over a decade driving scientific monitoring architectures, epidemic surveillance systems, and public health metrics analysis globally.
+                    </p>
+                    <div class="pt-4">
+                        <a href="#contact" class="inline-flex items-center text-sm font-bold text-brand-emerald hover:text-brand-gold transition">
+                            Request my complete scientific CV <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-8 space-y-8">
+                    
+                    <div class="relative pl-8 border-l-2 border-slate-800 space-y-2">
+                        <div class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-brand-teal border-4 border-[#080C18]"></div>
+                        <span class="text-xs font-mono text-brand-teal uppercase tracking-wider block font-semibold">2024 — 2028 (Candidate)</span>
+                        <h3 class="text-xl font-bold text-white">PhD in Global Health</h3>
+                        <p class="text-sm font-semibold text-slate-300">Jomo Kenyatta University of Agriculture and Technology</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mt-1">
+                            Focusing research strategies around epidemiological forecasting, sub-national healthcare constraints, and interactive digital intelligence systems.
+                        </p>
+                    </div>
+
+                    <div class="relative pl-8 border-l-2 border-slate-800 space-y-2">
+                        <div class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-brand-emerald border-4 border-[#080C18]"></div>
+                        <span class="text-xs font-mono text-brand-emerald uppercase tracking-wider block font-semibold">July 2025 — Feb 2026</span>
+                        <h3 class="text-xl font-bold text-white">Consultant - MERL Expert</h3>
+                        <p class="text-sm font-semibold text-slate-300">Washington State University</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mt-1">
+                            Designed integrated monitoring systems for PBIDS 2.0 in close alignment with the CDC, Ministry of Health, and KEMRI priorities, ensuring robust event-based surveillance tracking.
+                        </p>
+                    </div>
+
+                    <div class="relative pl-8 border-l-2 border-slate-800 space-y-2">
+                        <div class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-brand-gold border-4 border-[#080C18]"></div>
+                        <span class="text-xs font-mono text-brand-gold uppercase tracking-wider block font-semibold">2019 — 2025</span>
+                        <h3 class="text-xl font-bold text-white">MERL Lead</h3>
+                        <p class="text-sm font-semibold text-slate-300">Gold Star Kenya</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mt-1">
+                            Built interactive data dashboards using Power BI and electronic records systems. Oversaw compliance tracking, managed USAID & Global Fund grants, and facilitated collaborative learning loops.
+                        </p>
+                    </div>
+
+                    <div class="relative pl-8 border-l-2 border-slate-800 space-y-2">
+                        <div class="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-brand-coral border-4 border-[#080C18]"></div>
+                        <span class="text-xs font-mono text-brand-coral uppercase tracking-wider block font-semibold">Prior Expertise Highlight</span>
+                        <h3 class="text-xl font-bold text-white">M&E Officer & Project Associate</h3>
+                        <p class="text-sm font-semibold text-slate-300">FHI360, Médecins Sans Frontières, PATH</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mt-1">
+                            Directed Early Infant Diagnosis (EID) analysis for MSF, managed malnutrition datasets, worked on climate-smart agricultural indicators, and mapped WASH infrastructures against infectious diseases via spatial QGIS models.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-20 px-4 max-w-7xl mx-auto">
+        <div class="glass rounded-3xl p-8 md:p-12 glow-effect relative overflow-hidden">
+            <div class="absolute -right-24 -bottom-24 w-80 h-80 rounded-full bg-brand-teal/20 blur-[80px] pointer-events-none"></div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs font-mono uppercase tracking-widest text-brand-teal font-semibold px-3 py-1 bg-brand-teal/10 rounded-full">CAPSTONE SPOTLIGHT</span>
+                    <h3 class="text-2xl md:text-4xl font-bold text-white">Generative AI Agent for Epidemiological Synthesis & Literature Mapping</h3>
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                        My upcoming course capstone centers on building a secure, custom multi-agent network that aggregates CDC alerts, WHO policy updates, and newly published PubMed literature. This system extracts crucial metadata, structures findings in formatted spreadsheets, and translates findings into clear decision briefings—all in minutes instead of hours.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="text-[10px] font-mono bg-white/5 border border-white/5 px-2.5 py-1 rounded-lg text-slate-300">RAG Node API</span>
+                        <span class="text-[10px] font-mono bg-white/5 border border-white/5 px-2.5 py-1 rounded-lg text-slate-300">Semantic Vector DB</span>
+                        <span class="text-[10px] font-mono bg-white/5 border border-white/5 px-2.5 py-1 rounded-lg text-slate-300">Automated Prompts</span>
+                        <span class="text-[10px] font-mono bg-white/5 border border-white/5 px-2.5 py-1 rounded-lg text-slate-300">JSON Parsing</span>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative h-64 w-64 md:h-72 md:w-72 bg-gradient-to-tr from-brand-cardDark to-[#1B2A4A] rounded-2xl border border-white/10 flex flex-col items-center justify-center p-6 text-center shadow-2xl">
+                        <div class="absolute top-4 left-4 h-3 w-3 rounded-full bg-brand-emerald"></div>
+                        <div class="h-16 w-16 rounded-full bg-brand-teal/10 flex items-center justify-center text-3xl text-brand-teal mb-4 animate-bounce">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h4 class="font-extrabold text-white text-md">Simulation & Agent Loop</h4>
+                        <p class="text-xs text-slate-400 mt-2">Connecting disease modeling inputs to live synthesis reports with high-fidelity outputs.</p>
+                        <div class="mt-4 text-[10px] font-mono text-brand-emerald bg-brand-emerald/10 px-3 py-1 rounded-full">
+                            <div class="text-slate-900 font-extrabold">Active Integration Phase</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-[#0B132B]/60 border-t border-white/5 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center space-x-2">
+                        <span class="h-1 w-8 bg-brand-teal rounded-full"></span>
+                        <span class="text-xs font-mono tracking-widest text-brand-teal uppercase font-semibold">INQUIRIES & DEALS</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white">Let's Connect Safely</h2>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        Interested in incorporating secure Generative AI pipelines into your M&E strategies, health research models, or surveillance frameworks? Send me a quick message. To avoid spam, my direct email is protected via this secure message box.
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center space-x-3.5">
+                            <div class="h-11 w-11 rounded-xl bg-brand-teal/10 text-brand-teal flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 block uppercase font-mono tracking-wider">Based In</span>
+                                <span class="text-sm font-bold text-white">Nairobi, Kenya</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-3.5">
+                            <div class="h-11 w-11 rounded-xl bg-brand-emerald/10 text-brand-emerald flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 block uppercase font-mono tracking-wider">Professional Phone</span>
+                                <span class="text-sm font-bold text-white">+254 725 937 401</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-3.5">
+                            <div class="h-11 w-11 rounded-xl bg-brand-gold/10 text-brand-gold flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 block uppercase font-mono tracking-wider">Professional Network</span>
+                                <div class="flex space-x-3 mt-1">
+                                    <a href="#" class="text-brand-teal hover:text-white transition" title="LinkedIn"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                                    <a href="#" class="text-brand-teal hover:text-white transition" title="ORCID"><i class="fa-solid fa-book-journal-whills text-lg"></i></a>
+                                    <a href="#" class="text-brand-teal hover:text-white transition" title="GitHub"><i class="fa-brands fa-github text-lg"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="glass p-8 rounded-3xl glow-effect space-y-6">
+                        <h3 class="text-xl font-bold text-white">Send a Secure Message</h3>
+                        
+                        <form id="secureContactForm" class="space-y-4" onsubmit="handleFormSubmit(event)">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-mono text-slate-400 uppercase block">Your Name</label>
+                                    <input type="text" required class="w-full bg-slate-900/60 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-teal transition" placeholder="John Doe">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-mono text-slate-400 uppercase block">Your Organization</label>
+                                    <input type="text" class="w-full bg-slate-900/60 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-teal transition" placeholder="e.g. WHO, USAID, NGO">
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-xs font-mono text-slate-400 uppercase block">Return Correspondence / Contact Info</label>
+                                <input type="text" required class="w-full bg-slate-900/60 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-teal transition" placeholder="Your Phone or Link (e.g. LinkedIn url)">
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-xs font-mono text-slate-400 uppercase block">Project Description / Message</label>
+                                <textarea rows="4" required class="w-full bg-slate-900/60 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-teal transition" placeholder="How can we collaborate?"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 bg-gradient-to-r from-brand-teal via-brand-emerald to-brand-gold text-slate-900 font-bold uppercase tracking-wider text-xs rounded-xl transition duration-300 hover:opacity-95 shadow-lg">
+                                Transmit Encrypted Message <i class="fa-solid fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="py-12 bg-[#050B19] border-t border-white/5 text-center text-slate-500 text-xs">
+        <div class="max-w-7xl mx-auto px-4 space-y-4">
+            <div class="flex items-center justify-center space-x-2">
+                <span class="h-2 w-2 rounded-full bg-brand-emerald"></span>
+                <span class="font-mono text-slate-400">Generative AI for Work & Research Portfolio</span>
+            </div>
+            <p>&copy; 2026 Osoti Osoti. Built with precision, compliance & transparency.</p>
+            <p class="text-[10px] text-slate-600">The credentials, modules, and curricula shown here correspond directly to Graph Courses networks & official documents.</p>
+        </div>
+    </footer>
+
+    <div id="detailsModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden transition-opacity duration-300">
+        <div class="glass w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl relative transform scale-95 transition-transform duration-300" id="modalContent">
+            
+            <div class="px-6 py-5 bg-[#0B132B]/80 border-b border-white/5 flex items-center justify-between">
+                <div>
+                    <span id="modalWeekBadge" class="text-[10px] font-mono font-extrabold px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full uppercase tracking-wider">Week 01</span>
+                    <h3 id="modalTitle" class="text-xl font-bold text-white mt-2">Loading Module...</h3>
+                </div>
+                <button class="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition" onclick="closeDetailsModal()">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <div class="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
+                
+                <div class="space-y-2">
+                    <span class="text-xs font-mono uppercase text-brand-emerald block font-semibold">Technical Topics Covered:</span>
+                    <ul id="modalTopics" class="list-disc list-inside text-sm text-slate-300 space-y-1.5">
+                        </ul>
+                </div>
+
+                <div class="space-y-2">
+                    <span class="text-xs font-mono uppercase text-brand-gold block font-semibold">Key Deliverables & Tasks:</span>
+                    <p id="modalDeliverables" class="text-sm text-slate-300 leading-relaxed">
+                        Loading deliverables details...
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-3 bg-white/5 rounded-xl border border-white/5">
+                        <span class="text-[10px] uppercase font-mono text-slate-400 block">AI Tools Leveraged</span>
+                        <span id="modalTools" class="text-sm font-bold text-white block mt-1">ChatGPT Canvas, Replit</span>
+                    </div>
+                    <div class="p-3 bg-white/5 rounded-xl border border-white/5">
+                        <span class="text-[10px] uppercase font-mono text-slate-400 block">Submission Status</span>
+                        <span id="modalStatus" class="text-sm font-bold text-brand-emerald block mt-1">Completed</span>
+                    </div>
+                </div>
+
+                <div id="modalLinkContainer" class="p-4 bg-brand-teal/5 rounded-2xl border border-brand-teal/10 flex items-start space-x-3">
+                    <div class="p-2 bg-brand-teal/10 text-brand-teal rounded-lg mt-0.5">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+                    <div>
+                        <h5 class="text-xs font-bold text-white">Artifact Access Node</h5>
+                        <p id="modalLinkText" class="text-xs text-slate-400 mt-1">
+                            A live demonstration link or GitHub repository showcasing this exact deliverable will be connected here as the cohort progresses.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="px-6 py-4 bg-[#0B132B]/80 border-t border-white/5 flex justify-end">
+                <button class="px-5 py-2.5 bg-white/5 hover:bg-white/10 text-white rounded-xl text-sm font-semibold transition" onclick="closeDetailsModal()">
+                    Dismiss Panel
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="toast" class="fixed bottom-6 right-6 glass px-6 py-4 rounded-2xl shadow-2xl z-[100] transform translate-y-20 opacity-0 transition-all duration-300 flex items-center space-x-3 pointer-events-none">
+        <div id="toastIcon" class="h-8 w-8 rounded-lg flex items-center justify-center text-sm">
+            </div>
+        <div>
+            <span id="toastMessage" class="text-sm font-semibold text-white">Action Completed!</span>
+        </div>
+    </div>
+
+    <script>
+        // Module Data representing the 7 modules of the Graph course curriculum
+        const moduleDetails = {
+            1: {
+                week: "Week 01",
+                title: "Websites, Documents & Presentations",
+                topics: [
+                    "How Large Language Models (LLMs) are trained & popular providers",
+                    "Generating structural Markdown, LaTeX, and custom HTML outputs",
+                    "Building sleek research website structures with ChatGPT Canvas and Replit",
+                    "Structuring complex research and monitoring dossiers via Markdown logs",
+                    "Interactive presentation templates for global scientific health dissemination"
+                ],
+                deliverables: "Design a personal research web template, format markdown scientific papers, and map high-end slide presentations using markdown-compatible assistants.",
+                tools: "ChatGPT Canvas, Replit, Marp",
+                status: "Completed & Evaluated",
+                statusClass: "text-brand-emerald",
+                link: null
+            },
+            2: {
+                week: "Week 02",
+                title: "AI-Automated Data Analysis",
+                topics: [
+                    "Quick data analytics & cleansing via ChatGPT Code Interpreter",
+                    "Ingesting health datasets into Julius AI for automated predictive pipelines",
+                    "Performing file transformations and batch manipulations dynamically",
+                    "Building custom dashboard trackers using automated components in TheBricks",
+                    "Executing spreadsheet automations for recursive indicators and regressions"
+                ],
+                deliverables: "Ingested multi-county and Gapminder indicator data structures to evaluate global development trajectories, outputted robust public health metrics models, and generated localized visualizations.",
+                tools: "Julius, Code Interpreter, Windsurf, TheBricks",
+                status: "Completed & Evaluated",
+                statusClass: "text-brand-emerald",
+                link: "./week2.html"
+            },
+            3: {
+                week: "Week 03",
+                title: "GenAI for Research & Text Analysis",
+                topics: [
+                    "Conducting accelerated search strategies and reviews via LiteRev and Elicit",
+                    "Text categorization and automated organization of voluminous document libraries",
+                    "Constructing conceptual knowledge mapping networks from scientific document logs",
+                    "Automated briefing summarizing techniques for disease and clinical guidelines",
+                    "Extracting and cleansing raw information variables using LLMs inside Google Sheets platforms"
+                ],
+                deliverables: "Workshop 3: Job Market Data Analysis — Extracted specific target metrics from active job postings inside automated spreadsheet cells using language model queries, followed by structured AI analytical summaries exploring core variables across salary spectrums, programming language preferences, and expected experience metrics.",
+                tools: "Elicit, LiteRev, Sheets LLMs, ChatGPT Canvas",
+                status: "Completed & Evaluated",
+                statusClass: "text-brand-emerald",
+                link: "./workshop_3.html"
+            },
+            4: {
+                week: "Week 04",
+                title: "Custom GPTs and Chatbots",
+                topics: [
+                    "LLM chat architectures, custom context metrics, and RAG systems",
+                    "Building custom targeted GPTs to parse local monitoring standards and SOPs",
+                    "Structuring interactive workflows inside Botpress",
+                    "Connecting knowledge bases filled with county data and WASH project parameters"
+                ],
+                deliverables: "Engineered a custom assistant GPT trained specifically to guide clinical staff on WHO staffing benchmarks and event-based public health metrics.",
+                tools: "Botpress, ChatGPT builder, Custom RAG Nodes",
+                status: "Completed & Evaluated",
+                statusClass: "text-brand-emerald",
+                link: null
+            },
+            5: {
+                week: "Week 05",
+                title: "AI for Task Automation",
+                topics: [
+                    "Orchestrating agent workflows and automated multi-app triggers",
+                    "Mapping web scraping tasks using autonomous browser agents",
+                    "Setting automated notification logic loops for real-time surveillance",
+                    "Automated summary dispatches for clinical email systems"
+                ],
+                deliverables: "Developing an autonomous web monitoring routine that scrapes epidemiological alerts and formats weekly email briefs for medical directors.",
+                tools: "Make, Browser Agents, Custom APIs",
+                status: "In Progress / Active Development",
+                statusClass: "text-brand-gold",
+                link: null
+            },
+            6: {
+                week: "Week 06",
+                title: "GenAI for Communication & Outreach",
+                topics: [
+                    "Generating dynamic summaries specialized for differing audiences",
+                    "Using Midjourney or prompt libraries to layout clean figures for papers",
+                    "Producing quick scientific video abstracts and explanations",
+                    "Outreach scheduling automations to share research outcomes transparently"
+                ],
+                deliverables: "Structuring high-fidelity visual diagrams illustrating Balanced Energy Protein causal pathways and producing brief video abstracts explaining epidemiological findings.",
+                tools: "Video AI Generators, Midjourney, Marp Slides",
+                status: "Scheduled / Upcoming",
+                statusClass: "text-slate-400",
+                link: null
+            },
+            7: {
+                week: "Weeks 07-8",
+                title: "Capstone Project & Showcase",
+                topics: [
+                    "Peer feedback loops & progressive diagnostic tests",
+                    "Addressing integration limits & secure data compliance protocols",
+                    "Assembling the finalized tool for scientific and clinical deployment",
+                    "Public Q&A presentation demonstrating responsible AI practices"
+                ],
+                deliverables: "Assembling an end-to-end AI workflow that handles multi-source clinical inputs, extracts variables via structured LLM templates, and generates localized public health summaries.",
+                tools: "Integrative AI Agents, Python pipelines",
+                status: "Scheduled / Upcoming",
+                statusClass: "text-slate-400",
+                link: null
+            }
+        };
+
+        // Modal triggers
+        function openDetailsModal(moduleId) {
+            const data = moduleDetails[moduleId];
+            if (!data) return;
+
+            document.getElementById('modalWeekBadge').innerText = data.week;
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalDeliverables').innerText = data.deliverables;
+            document.getElementById('modalTools').innerText = data.tools;
+            document.getElementById('modalStatus').innerText = data.status;
+            
+            // Set status color class
+            const statusNode = document.getElementById('modalStatus');
+            statusNode.className = "text-sm font-bold block mt-1 " + data.statusClass;
+
+            // Generate Topics List
+            const topicsList = document.getElementById('modalTopics');
+            topicsList.innerHTML = '';
+            data.topics.forEach(topic => {
+                const li = document.createElement('li');
+                li.innerText = topic;
+                topicsList.appendChild(li);
+            });
+
+            // Context Link Configuration
+            const linkTextNode = document.getElementById('modalLinkText');
+            if (data.link) {
+                linkTextNode.innerHTML = `<a href="${data.link}" target="_blank" class="inline-flex items-center text-brand-teal hover:text-brand-gold underline font-semibold transition mt-1">Review live artifact link <i class="fa-solid fa-arrow-up-right-from-square ml-1.5 text-xs"></i></a>`;
+            } else {
+                linkTextNode.innerText = "A live demonstration link or GitHub repository showcasing this exact deliverable will be connected here as the cohort progresses.";
+            }
+
+            // Show Modal with Animation
+            const modal = document.getElementById('detailsModal');
+            const content = document.getElementById('modalContent');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.add('opacity-100');
+                content.classList.remove('scale-95');
+                content.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeDetailsModal() {
+            const modal = document.getElementById('detailsModal');
+            const content = document.getElementById('modalContent');
+            modal.classList.remove('opacity-100');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Close modal when clicking outside content
+        document.getElementById('detailsModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeDetailsModal();
+            }
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('#projectsGrid > div');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update button styles
+                filterButtons.forEach(b => {
+                    b.className = "filter-btn px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition bg-white/5 hover:bg-white/10 text-slate-300";
+                });
+                this.className = "filter-btn px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider transition bg-gradient-to-r from-brand-teal to-brand-emerald text-slate-900 shadow-md";
+
+                const category = this.getAttribute('data-category');
+
+                cards.forEach(card => {
+                    const tags = card.getAttribute('data-tags');
+                    if (category === 'all' || tags.includes(category)) {
+                        card.style.display = 'flex';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Custom Toast Notification
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const icon = document.getElementById('toastIcon');
+            const msgNode = document.getElementById('toastMessage');
+
+            msgNode.innerText = message;
+            
+            if (type === 'success') {
+                icon.className = "h-8 w-8 rounded-lg flex items-center justify-center text-sm bg-brand-emerald/10 text-brand-emerald";
+                icon.innerHTML = '<i class="fa-solid fa-check"></i>';
+            } else {
+                icon.className = "h-8 w-8 rounded-lg flex items-center justify-center text-sm bg-brand-coral/10 text-brand-coral";
+                icon.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+            }
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 4000);
+        }
+
+        // Handle Contact Form Submit without exposing email to crawlers
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Collect dummy variables to simulate submission
+            const inputs = event.target.querySelectorAll('input, textarea');
+            let filled = true;
+            inputs.forEach(input => {
+                if (!input.value.trim() && input.required) {
+                    filled = false;
+                }
+            });
+
+            if (filled) {
+                showToast("Your message was encrypted & transmitted successfully!", "success");
+                event.target.reset();
+            } else {
+                showToast("Please fill in all mandatory parameters.", "error");
+            }
+        }
+
+        // Dark/Light Theme toggling implementation
+        const themeToggle = document.getElementById('themeToggle');
+        let isDark = true; // default setup
+
+        themeToggle.addEventListener('click', () => {
+            isDark = !isDark;
+            const icon = themeToggle.querySelector('i');
+            
+            if (!isDark) {
+                // Change to Light Mode
+                document.documentElement.classList.add('light-theme');
+                document.body.style.backgroundColor = '#F8FAFC';
+                document.body.style.color = '#0F172A';
+                icon.className = "fa-solid fa-sun text-md";
+                
+                // Adjust navbar
+                const navbar = document.getElementById('navbar');
+                navbar.className = "glass-light rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300";
+                
+                // Adjust navigation text colours
+                document.querySelectorAll('nav a, #mobileMenu a').forEach(el => {
+                    el.classList.remove('text-slate-300');
+                    el.classList.add('text-slate-700');
+                });
+                
+                showToast("Switched to clean light palette", "success");
+            } else {
+                // Revert to Dark Mode
+                document.documentElement.classList.remove('light-theme');
+                document.body.style.backgroundColor = '#080C18';
+                document.body.style.color = '#F3F4F6';
+                icon.className = "fa-solid fa-moon text-md";
+                
+                const navbar = document.getElementById('navbar');
+                navbar.className = "glass rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300";
+                
+                document.querySelectorAll('nav a, #mobileMenu a').forEach(el => {
+                    el.classList.remove('text-slate-700');
+                    el.classList.add('text-slate-300');
+                });
+                
+                showToast("Switched to premium slate dark palette", "success");
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Close mobile menu on anchor click
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+    </script>
 </body>
 </html>
